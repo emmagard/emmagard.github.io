@@ -1,0 +1,32 @@
+body {
+	max-width: 1300px;
+	min-width: 1300px;
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 78px;
+	font-family: sans-serif;
+}
+
+.left {
+	width: 400px;
+	float: left;
+}
+	
+.center {
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+	top: 220px;
+	
+}
+.right {
+	width: 400px;
+	float: right;
+	position: relative;
+	top: 220px;
+
+}
+
+
