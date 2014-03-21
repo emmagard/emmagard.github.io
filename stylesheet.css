@@ -85,8 +85,8 @@ h1 {
 }
 .rbutton {
 	position: relative;
-	top: -620px;
-	left: 1040px;
+	top: -628px;
+	left: 1036px;
 	background: pink;
 	border: 3px solid black;
 	border-radius: 3px;
@@ -97,7 +97,7 @@ h1 {
 .three {
 	position: relative;
 	right: 500px;
-	top: -510px;
+	top: -490px;
 	text-align: center;
 }
 .three p {
@@ -109,6 +109,7 @@ h1 {
 	left: 500px;
 	background: pink;
 	z-index: -1;
+	margin-left: 50px;
 }
 .left {
 	width: 200px;
