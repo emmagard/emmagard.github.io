@@ -48,7 +48,7 @@ h1 {
 	
 .two{
 	position: relative;
-	left: 45px;
+	left: 125px;
 	top: -155px;
 }
 .center {
@@ -60,6 +60,13 @@ h1 {
 .lbutton {
 	position: relative;
 	top: -200px;
+	left: 161px;
+	z-index: 1;
+	background: pink;
+	border: 3px solid black;
+	border-radius: 3px;
+	font-weight: bold;
+	font-size: 24;
 	
 }
 .carousel {
@@ -74,11 +81,17 @@ h1 {
 .cphotos {
 	width: 400px;
 	border-radius: 10px;
+	border: 5px solid black;
 }
 .rbutton {
 	position: relative;
-	top: -633px;
-	left: 1211px;
+	top: -620px;
+	left: 1040px;
+	background: pink;
+	border: 3px solid black;
+	border-radius: 3px;
+	font-weight: bold;
+	font-size: 24;
 }
 
 .three {
