@@ -4,13 +4,12 @@
 	<title>About Emma</title>
 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script>
-		
-	</script>
+	
 </head>
 <body>
 	<header>
 		<h1>ABOUT EMMA</h1>
+		<div class="test"></div>
 	</header>
 
 
@@ -23,8 +22,10 @@
 	</div>
 	<div class="two">
 		<img class="center" src="http://i.imgur.com/V7PdHEo.jpg">
+		<button class="lbutton"> < </button>
 		<div class="carousel">
 		</div>
+		<button class="rbutton"> > </button>
 	</div>
 	
 	<div class="three">
@@ -34,7 +35,35 @@
 		<p class="contact">emmagard@gmail.com<br>781.385.9124
 		</p>
 	</div>
-	
+	<script>
+		var photos = [
+			'hello you', '2', '3'
+			//"http://i.imgur.com/AuXFn3a.jpg",
+			//"http://i.imgur.com/7bkkqwy.jpg?1",
+			//"http://i.imgur.com/YugK5lT.jpg"
+		];
+
+		//alert(photos[0]);
+
+		$('.carousel').html(photos[0]);
+
+		//var firstPhoto = 0;
+
+		//$(document).ready(function() {
+			//show the first photo in the array
+		//});
+
+		//$('.rbutton').click(function (){
+		//	if (firstPhoto < photos.length) 
+		//	{
+
+
+		//	}
+
+		//});
+		
+
+	</script>
 
 
 </body>
