@@ -3,15 +3,13 @@
 <head>
 	<title>About Emma</title>
 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
 </head>
 <body>
 	<header>
 		<h1>ABOUT EMMA</h1>
 		<div class="test"></div>
 	</header>
-
 
 	<div class="one">
 		<img class="right" src= "http://i.imgur.com/Kv7aGoA.jpg?2">
@@ -37,30 +35,35 @@
 	</div>
 	<script>
 		var photos = [
-			'hello you', '2', '3'
-			//"http://i.imgur.com/AuXFn3a.jpg",
-			//"http://i.imgur.com/7bkkqwy.jpg?1",
-			//"http://i.imgur.com/YugK5lT.jpg"
+			"<img src= 'http://i.imgur.com/AuXFn3a.jpg' class='cphotos'>",
+			"<img src= 'http://i.imgur.com/7bkkqwy.jpg?1' class='cphotos'>",
+			"<img src= 'http://i.imgur.com/YugK5lT.jpg' class='cphotos'>"
 		];
 
-		//alert(photos[0]);
+		var currentPhoto = 0;
 
-		$('.carousel').html(photos[0]);
+		$(document).ready(function() 
+		{
+			$('.carousel').html(photos[0]);
+		});
 
-		//var firstPhoto = 0;
+		$('.rbutton').click(function ()
+		{
+			if (currentPhoto < photos.length) 
+			{
+				currentPhoto = currentPhoto + 1;
+				$('.carousel').html(photos[currentPhoto]);
+			}
 
-		//$(document).ready(function() {
-			//show the first photo in the array
-		//});
+		});
 
-		//$('.rbutton').click(function (){
-		//	if (firstPhoto < photos.length) 
-		//	{
-
-
-		//	}
-
-		//});
+		$('.lbutton').click(function(){
+			if (currentPhoto <= photos.length)
+			{
+				currentPhoto = currentPhoto - 1;
+				$('.carousel').html(photos[currentPhoto]);
+			}
+		});
 		
 
 	</script>
