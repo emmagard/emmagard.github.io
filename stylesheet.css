@@ -1,7 +1,7 @@
 body {
-	max-width: 1300px;
-	min-width: 1300px;
-	height: 1250px;
+	max-width: 1000px;
+	min-width: 1000px;
+	height: 1100px;
 	font-family: sans-serif;
 	border: 20px solid black;
 	border-radius: 10px
@@ -19,14 +19,14 @@ h1 {
 
 .one {
 	position: relative;
-	left: 500px;
+	left: 385px;
 	text-align: center;	
 }
 .one p {
 	margin: 0 auto;
 }
 .right {
-	width: 200px;
+	width: 154px;
 	border-radius: 10px;
 	border: 5px solid black;
 }
@@ -34,11 +34,11 @@ h1 {
 .about {
 	width: 70%;
 	position: relative;
-	top: -230px;
-	left: 45px;
+	top: -190px;
+	left: 35px;
 }
 .about p {
-	height: 177px;
+	height: 154px;
 	text-align: justify;
 	border: 5px solid black;
 	border-radius: 10px;
@@ -48,19 +48,19 @@ h1 {
 	
 .two{
 	position: relative;
-	left: 125px;
-	top: -155px;
+	left: 97px;
+	top: -135px;
 }
 .center {
-	width: 400px;
+	width: 308px;
 	border-radius: 10px;
 	border: 5px solid black;
 	text-align: center;
 }
 .lbutton {
 	position: relative;
-	top: -200px;
-	left: 161px;
+	top: -180px;
+	left: 114px;
 	z-index: 1;
 	background: pink;
 	border: 3px solid black;
@@ -70,23 +70,23 @@ h1 {
 	
 }
 .carousel {
-	width: 765px;
-	height: 400px;
+	width: 590px;
+	height: 308px;
 	position: relative;
-	left: 439px;
-	top: -414px;
+	left: 339px;
+	top: -330px;
 	text-align: center;
 	/*background: transparent;*/
 }
 .cphotos {
-	width: 400px;
+	width: 308px;
 	border-radius: 10px;
 	border: 5px solid black;
 }
 .rbutton {
 	position: relative;
-	top: -628px;
-	left: 1036px;
+	top: -516px;
+	left: 800px;
 	background: pink;
 	border: 3px solid black;
 	border-radius: 3px;
@@ -96,8 +96,8 @@ h1 {
 
 .three {
 	position: relative;
-	right: 500px;
-	top: -490px;
+	right: 385px;
+	top: -390px;
 	text-align: center;
 }
 .three p {
@@ -105,21 +105,22 @@ h1 {
 }
 .three h1 {
 	position: relative;
-	top: -200px;
-	left: 500px;
+	top: -170px;
+	left: 385px;
 	background: pink;
 	z-index: -1;
 	margin-left: 50px;
 }
 .left {
-	width: 200px;
+	width: 154px;
 	border-radius: 10px;
 	border: 5px solid black;	
 }
 .contact {
 	position: relative;
-	top: -310px;
-	left: 975px;
+	top: -280px;
+	left: 776px;
+	font-size: 12px;
 	padding: 0 5px 0 5px;
 }
 
