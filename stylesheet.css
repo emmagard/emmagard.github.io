@@ -13,13 +13,14 @@ header {
 }
 h1 {
 	font-size: 78px;
-	font-family: sans-serif;
+	font-family: 'Fredoka One', cursive;
 	margin-left: 50px;
 }
 
 .one {
 	position: relative;
 	left: 385px;
+	font-family: 'Fredoka One', cursive;
 	text-align: center;	
 }
 .one p {
@@ -27,7 +28,7 @@ h1 {
 }
 .right {
 	width: 154px;
-	border-radius: 10px;
+	border-radius: 90px;
 	border: 5px solid black;
 }
 
@@ -39,6 +40,7 @@ h1 {
 }
 .about p {
 	height: 154px;
+	font-family: 'News Cycle', sans-serif;
 	text-align: justify;
 	border: 5px solid black;
 	border-radius: 10px;
@@ -98,14 +100,16 @@ h1 {
 	position: relative;
 	right: 385px;
 	top: -390px;
+	font-family: 'Fredoka One', cursive;
 	text-align: center;
 }
 .three p {
 	margin: 0 auto;
 }
 .three h1 {
+	font-family: 'Fredoka One', cursive;
 	position: relative;
-	top: -170px;
+	top: -180px;
 	left: 385px;
 	background: pink;
 	z-index: -1;
@@ -113,12 +117,12 @@ h1 {
 }
 .left {
 	width: 154px;
-	border-radius: 10px;
+	border-radius: 90px;
 	border: 5px solid black;	
 }
 .contact {
 	position: relative;
-	top: -280px;
+	top: -290px;
 	left: 776px;
 	font-size: 12px;
 	padding: 0 5px 0 5px;
