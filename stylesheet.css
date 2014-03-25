@@ -19,6 +19,7 @@ h1 {
 
 .one {
 	position: relative;
+	top: 20px;
 	left: 385px;
 	font-family: 'Fredoka One', cursive;
 	text-align: center;	
@@ -39,7 +40,7 @@ h1 {
 	left: 35px;
 }
 .about p {
-	height: 154px;
+	height: 190px;
 	font-family: 'News Cycle', sans-serif;
 	text-align: justify;
 	border: 5px solid black;
@@ -98,8 +99,8 @@ h1 {
 
 .three {
 	position: relative;
-	right: 385px;
-	top: -390px;
+	right: 380px;
+	top: -380px;
 	font-family: 'Fredoka One', cursive;
 	text-align: center;
 }
@@ -122,9 +123,9 @@ h1 {
 }
 .contact {
 	position: relative;
-	top: -290px;
-	left: 776px;
-	font-size: 12px;
+	top: -310px;
+	left: 780px;
+	font-size: 10px;
 	padding: 0 5px 0 5px;
 }
 
