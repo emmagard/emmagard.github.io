@@ -32,7 +32,7 @@ const projects = [
         description: "",
         image: "/everytown.png",
         link: "https://www.everytown.org/",
-        tech: ["WordPress Multisite", "Algolia", "Javascript"]
+        tech: ["WordPress Multisite", "Algolia", "JavaScript"]
     },
     {
         title: "Thermal Printer",
@@ -46,21 +46,21 @@ const projects = [
         description: "",
         image: "/grist.png",
         link: "https://grist.org/",
-        tech: ["WordPress", "Javascript"]
+        tech: ["WordPress", "JavaScript"]
     },
     {
         title: "MIT Admissions",
         description: "",
         image: "/mitadmissions.png",
         link: "https://mitadmissions.org/",
-        tech: ["WordPress", "Javascript"]
+        tech: ["WordPress", "JavaScript"]
     },
     {
         title: "MIT School of Science",
         description: "",
         image: "/mitscience.png",
         link: "https://science.mit.edu/",
-        tech: ["WordPress", "Javascript"]
+        tech: ["WordPress", "JavaScript"]
     },
     {
         title: "MIT Climate Primer",
@@ -74,7 +74,7 @@ const projects = [
         description: "",
         image: "/momsdemand.png",
         link: "https://momsdemandaction.org/",
-        tech: ["WordPress", "Javascript"]
+        tech: ["WordPress", "JavaScript"]
     },
     {
         title: "F-Prime Capital",
@@ -88,7 +88,7 @@ const projects = [
         description: "",
         image: "/pgajack2.png",
         link: "https://jack-columbus.pgatour.com/",
-        tech: ["Javascript"]
+        tech: ["JavaScript"]
     },
     {
         title: "Sidecar Pictures",
@@ -102,8 +102,44 @@ const projects = [
         description: "",
         image: "/newamerican.png",
         link: "https://www.newamericaneconomy.org/",
-        tech: ["WordPress", "Javascript"]
+        tech: ["WordPress", "JavaScript"]
     },
+];
+
+export const programmingLanguages = [
+    "JavaScript",
+    "TypeScript",
+    "CSS/SCSS",
+    "HTML",
+    "Python",
+    "PHP",
+    "Ruby",
+    "GraphQL",
+];
+
+export const librariesFrameworks = [
+    "React", 
+    "React Native",
+    "Vue.js", 
+    "Next.js",
+    "Node.js",
+    "Ruby on Rails",
+    "Flask",
+    "Timber",
+    "Tailwind CSS",
+];
+
+export const tools = [
+    "Git",
+    "Netlify",
+    "Vercel",
+    "Heroku",
+    "WordPress",
+    "Contentful",
+    "Docker",
+    "Algolia",
+    "Craft CMS",
+    "Ghost"
 ];
 
 export default projects;
