@@ -1,18 +1,18 @@
 import './index.css';
 import React from 'react';
-import Name2 from './Name2.jsx';
+import Name from './Name.jsx';
 import FlowerMain from './FlowerMain.jsx';
 
 function Home() {
   return (
-    <section className="relative flex items-center h-screen">
+    <section className="relative flex items-center h-screen grid grid-cols-12 gap-2">
       <h1 className="hidden">Emma Gardner</h1>
-      <div className="flex justify-center items-center w-full">
-        <Name2 className="w-[40%]" />
+      <div className="flex flex-col justify-center items-center col-start-4 col-span-6">
+        <Name />
+        <p className="font-display text-2xl font-semibold letter-spacing-[5px]">Software Engineer</p>
       </div>
 
       <FlowerMain className="absolute size-[200px] top-[3%] left-[3%] rotate-z-10" />
-      {/* <FlowerMain className="absolute size-[150px] top-[10%] left-[34%] rotate-z-120" /> */}
       <FlowerMain className="absolute size-[100px] top-[15%] right-[30%] rotate-z-100" />
       <FlowerMain className="absolute size-[300px] -top-[12%] right-0 -rotate-z-15" />
 

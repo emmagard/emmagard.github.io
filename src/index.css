@@ -44,22 +44,7 @@
   --color-slimer: #4fe91e;
   --color-harbor-fog: #607d8b;
   --color-light-blue: #f8f9fa;
-}
-
-.animate-emma-spin-2 {
-  animation: rotate 1s linear infinite;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * 1s);
-}
-
-.animate-emma-grow {
-  animation: grow 1s linear;
-  animation-delay: 1s;
-}
-
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
+  --color-light-pink: #fdf0f5;
+  --color-mid-pink: #f37aa2;
+  --color-shadow: #3f3236;
 }
