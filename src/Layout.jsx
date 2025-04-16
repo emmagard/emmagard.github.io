@@ -45,8 +45,10 @@ function Layout() {
     setActivePath(path);
   };
 
+  // bg-linear-45 from-pink-fire to-transparent
+
   return (
-    <div className="relative overflow-hidden bg-linear-45 from-pink-fire to-transparent">
+    <div className="relative overflow-hidden bg-black">
       <div className="relative max-w-[1200px] m-auto py-0 px-[1rem]">
         <div className="grid-ref hidden absolute top-0 bottom-0 left-0 right-0">
           <div className="grid grid-cols-12 gap-2">

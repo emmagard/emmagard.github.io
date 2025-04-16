@@ -9,7 +9,7 @@ function Home() {
       <h1 className="hidden">Emma Gardner</h1>
       <div className="flex flex-col justify-center items-center col-start-4 col-span-6">
         <Name />
-        <p className="font-display text-2xl font-semibold letter-spacing-[5px]">Software Engineer</p>
+        <p className="font-display text-2xl font-semibold letter-spacing-[5px] text-white">Software Engineer</p>
       </div>
 
       <FlowerMain className="absolute size-[200px] top-[3%] left-[3%] rotate-z-10" />

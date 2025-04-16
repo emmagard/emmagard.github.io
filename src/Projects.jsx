@@ -20,8 +20,8 @@ const Projects = () => {
   return (
     <section id="projects" className="projects relative flex h-screen pt-[10%] overflow-hidden grid grid-cols-12 gap-2">
       <div className="column1 relative col-start-2 col-span-4 overflow-hidden">
-        <h2 className="font-display text-5xl font-bold mb-10">Projects</h2>
-        <ul className="h-[75vh] overflow-y-scroll pb-[140px]">
+        <h2 className="font-display text-5xl font-bold mb-10 text-white">Projects</h2>
+        <ul className="h-[75vh] overflow-y-scroll pb-[140px] text-white">
           {portfolio.map((project, index) => (
             <li className="mb-4" key={`project-${index}`}
             onMouseEnter={() => {handleProjectMouseEnter(index)}}
@@ -49,7 +49,7 @@ const Projects = () => {
         </ul>
       </div>
           
-      <svg className="cloud absolute left-0 -bottom-[200px]" xmlns="http://www.w3.org/2000/svg" width="560" height="360" viewBox="0 0 560 360" fill="none">
+      {/* <svg className="cloud absolute left-0 -bottom-[200px]" xmlns="http://www.w3.org/2000/svg" width="560" height="360" viewBox="0 0 560 360" fill="none">
         <g filter="url(#filter0_f_640_91)">
         <ellipse cx="280" cy="180" rx="200" ry="100" fill="#e91e63"/>
         </g>
@@ -60,7 +60,7 @@ const Projects = () => {
             <feGaussianBlur stdDeviation="40" result="effect1_foregroundBlur_640_91"/>
           </filter>
         </defs>
-      </svg>
+      </svg> */}
 
       <div className="column2 col-start-6 col-span-6">
         <div className="relative">

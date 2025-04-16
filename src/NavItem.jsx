@@ -18,7 +18,7 @@ const NavItem = ({label, path, handleIsActive, isActive}) => {
   },[itemRef.current, isActive]);
 
   return (
-    <li ref={itemRef} className={`relative font-display text-xl font-bold ${isActive ? 'text-light-pink' : 'text-black'}`}>
+    <li ref={itemRef} className={`relative font-display text-xl font-bold ${isActive ? 'text-black' : 'text-white'}`}>
       <Link className='relative z-2' to={path}>{label}</Link> 
     </li>
   );

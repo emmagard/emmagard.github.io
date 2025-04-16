@@ -6,22 +6,22 @@ const Skills = () => {
   return (
     <section id="projects" className="projects relative flex h-screen pt-[10%] overflow-hidden grid grid-cols-12 gap-2">
       <div className="column1 relative col-start-2 col-span-4 overflow-hidden">
-        <h1 className="font-display text-5xl font-bold mb-10">Skills</h1>
+        <h1 className="font-display text-5xl font-bold mb-10 text-white">Skills</h1>
         <div>
-          <h2 className="font-display text-2xl font-semibold mb-5">Programming Languages</h2>
-          <ul className="columns-2 mb-4">
+          <h2 className="font-display text-2xl font-semibold mb-5 text-white">Programming Languages</h2>
+          <ul className="columns-2 mb-4 text-white">
             {programmingLanguages.map((language, index) => (
               <li className="" key={`programming-language-${index}`}>{language}</li>
             ))}
           </ul>
-          <h2 className="font-display text-2xl font-semibold mb-5">Libraries & Frameworks</h2>
-          <ul className="columns-2 mb-4">
+          <h2 className="font-display text-2xl font-semibold mb-5 text-white">Libraries & Frameworks</h2>
+          <ul className="columns-2 mb-4 text-white">
             {librariesFrameworks.map((library, index) => (
               <li className="" key={`library-framework-${index}`}>{library}</li>
             ))}
           </ul>
-          <h2 className="font-display text-2xl font-semibold mb-5">Tools, Platforms & Services</h2>
-          <ul className="columns-2 mb-4">
+          <h2 className="font-display text-2xl font-semibold mb-5 text-white">Tools, Platforms & Services</h2>
+          <ul className="columns-2 mb-4 text-white">
             {tools.map((tool, index) => (
               <li className="" key={`tool-${index}`}>{tool}</li>
             ))}
