@@ -65,14 +65,14 @@ const Projects = () => {
       <div className="column2 col-start-6 col-span-6">
         <div className="relative">
           <img src={projectImagePath} className={`relative w-full z-6 transition rounded-md shadow-md shadow-shadow/50 mt-[88px] ${isMouseLeave ? 'opacity-0 duration-300' : 'opacity-100 duration-800'}`} />
-          <div className={`absolute -right-[40px] -bottom-[40px] w-[50%] bg-white shadow-md shadow-shadow/50 rounded-xl p-[30px] z-6 ${isMouseLeave ? 'opacity-0 duration-300' : 'opacity-100 duration-800'}`}>
+          <div className={`absolute -right-[50px] -bottom-[50px] w-[50%] bg-white shadow-md shadow-shadow/50 rounded-xl p-[30px] z-6 ${isMouseLeave ? 'opacity-0 duration-300' : 'opacity-100 duration-800'}`}>
             <p className="text-black">{projectDescription}</p>
           </div>
         </div>
-        <FlowerMain className="absolute top-[14%] left-[40%]"/>
+        <FlowerMain className={`absolute top-[14%] left-[40%] ${isMouseLeave ? 'opacity-100 duration-300' : 'opacity-0 duration-800'}`}/>
         <FlowerMain className="absolute size-[250px] left-[2%] -top-[20%] rotate-z-75" />
         <FlowerMain className="absolute size-[250px] right-[2%] top-[4%] rotate-z-75" />
-        <FlowerMain className="absolute size-[100px] left-[2%] bottom-[4%] rotate-z-215" />
+        <FlowerMain className="absolute size-[100px] left-0 bottom-[4%] rotate-z-215" />
         <FlowerMain className="absolute size-[300px] right-[23%] -bottom-[11%] -rotate-z-70" />
         <FlowerMain className="absolute size-[170px] right-[1%] -bottom-[4%] rotate-z-215" />
       </div>

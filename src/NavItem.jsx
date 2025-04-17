@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import { Link } from 'react-router-dom';
 
-const NavItem = ({label, path, handleIsActive, isActive}) => {
+const NavItem = ({label, path, handleClick, handleIsActive, isActive}) => {
   const itemRef = useRef(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const NavItem = ({label, path, handleIsActive, isActive}) => {
 
   return (
     <li ref={itemRef} className={`relative font-display text-xl font-bold ${isActive ? 'text-black' : 'text-white'}`}>
-      <Link className='relative z-2' to={path}>{label}</Link> 
+      <Link onClick={handleClick} className='relative z-2' to={path}>{label}</Link> 
     </li>
   );
 };

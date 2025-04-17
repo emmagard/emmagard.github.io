@@ -27,8 +27,10 @@ const nav = [
 ];
 
 function Layout() {
+  const isMobile = window.innerWidth < 640;
   const { pathname } = useLocation();
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activePath, setActivePath] = useState(null);
   const [flowerPostion, setFlowerPosition] = useState({
     top: '-35px',
@@ -45,7 +47,9 @@ function Layout() {
     setActivePath(path);
   };
 
-  // bg-linear-45 from-pink-fire to-transparent
+  const handleOpenMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className="relative overflow-hidden bg-black">
@@ -66,14 +70,16 @@ function Layout() {
             <div className="bg-black/20 h-[100vh] col-span-1"></div>
           </div>
         </div>
-        <nav className="absolute w-full mt-5">
-          <ul className="relative flex justify-center gap-11">
+        <button className="visible sm:invisible absolute text-white bg-black z-2 px-[10px] py-[12px]" onClick={handleOpenMenu}>menu</button>
+        <nav className={`${isMenuOpen ? 'visible z-1' : 'invisible'} sm:visible bg-black absolute w-full mt-5 top-0 bottom-0 right-0 left-0 sm:top-auto sm:bottom-auto sm:right-auto sm:left-auto pl-[1rem] sm:pl-0`}>
+          <ul className={`relative flex flex-col sm:flex-row justify-center gap-11 pl-[10px] sm:pl-0 mt-[50px] sm:mt-0`}>
             {nav.map((item, index) => (
               <NavItem
                 key={`nav-item-${index}`}
                 label={item.label}
                 path={item.path}
                 isActive={item.path === pathname}
+                handleClick={() => {setIsMenuOpen(false)}}
                 handleIsActive={handleIsActive} />
             ))}
           </ul>
@@ -82,7 +88,7 @@ function Layout() {
         <Outlet />
       </div>
       {/* set the postition of the flower to half its size so that we can translate it's position from it's "center" */}
-      <FlowerMain className={`absolute size-[150px] -left-[75px] ${activePath ? 'opacity-100 ease-[cubic-bezier(0,0,0.3,1)] transition-transform duration-150' : 'hidden'}`} style={flowerPostion}/>
+      <FlowerMain className={`invisible sm:visible absolute size-[150px] -left-[75px] ${activePath ? 'opacity-100 ease-[cubic-bezier(0,0,0.3,1)] transition-transform duration-150' : 'hidden'}`} style={flowerPostion}/>
     </div>
   )
 }
