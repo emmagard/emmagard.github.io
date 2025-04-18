@@ -1,31 +1,47 @@
 import './index.css';
 import React from 'react';
-import Name from './Name.jsx';
-import FlowerMain from './FlowerMain.jsx';
+import { Canvas } from '@react-three/fiber';
+import FruitGroup from './FruitGroup.jsx';
+import Nav from './components/Nav.jsx';
+import Projects from './Projects.jsx';
+import Skills from './Skills.jsx';
+import Contact from './Contact.jsx';
 
 function Home() {
+  
   return (
-    <section className="relative flex items-center h-screen grid grid-cols-12 gap-2">
-      <h1 className="hidden">Emma Gardner</h1>
-      <div className="flex flex-col justify-center items-center col-start-2 sm:col-start-4 col-span-10 sm:col-span-6">
-        <Name />
-        <p className="font-display text-2xl font-semibold letter-spacing-[5px] text-white">Software Engineer</p>
+    <div className="relative w-full h-full">
+      <div className="absolute top-0 bottom-0 right-0 left-0 mt-5 px-8">
+        
+        <section id="home" className="h-screen">
+          <h1 className="text-8xl font-bold mb-[10px]">Emma Gardner</h1>
+          <Nav />
+          <p className="text-8xl leading-26">A reliable full-stack engineer with a proven track record of building shippable web experiences through a technically agnostic lens.</p>
+        </section>
+       
+
+        <section id="projects">
+          <Projects />
+        </section>
+        
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
       </div>
-
-      <FlowerMain className="flower-1 absolute size-[82px] top-[18%] left-[-3%] sm:size-[200px] sm:top-[3%] sm:left-[3%] rotate-z-10" />
-      <FlowerMain className="flower-2 absolute size-[100px] top-[10%] right-[35%] rotate-z-100" />
-      <FlowerMain className="flower-3 absolute size-[100px] top-[17%] right-0 sm:size-[300px] sm:-top-[12%] sm:right-0 -rotate-z-15" />
-
-      <FlowerMain className="flower-4 absolute invisible sm:visible sm:size-[100px] left-[2%] rotate-z-70" />
-      <FlowerMain className="flower-5 absolute invisible sm:visible size-[175px] -right-[8%] sm:size-[200px] sm:right-0" />
       
-      <FlowerMain className="flower-6 absolute invisible sm:visible size-[200px] bottom-[5%] sm:size-[300px] sm:bottom-[-14%] sm:left-[5%] rotate-60" />
-      <FlowerMain className="flower-7 absolute invisible sm:visible size-[100px] bottom-[18%] sm:bottom-[5%] left-[40%] rotate-185" />
-      <FlowerMain className="flower-8 absolute size-[100px] sm:size-[150px] bottom-[10%] sm:bottom-[-2%] left-[-3%] sm:right-[24%] rotate-180" />
-      <FlowerMain className="flower-9 absolute size-[80px] bottom-[7%] sm:bottom-[18%] right-[40%] sm:right-[12%]" />
-      <FlowerMain className="flower-10 absolute size-[100px] bottom-[12%] sm:bottom-[5%] right-[2%] sm:right-[-3%] -rotate-z-110" />
-    </section>
-  )
+      <Canvas camera={ {fov: 75, near: 0.1, far: 1000, position: [0, 0, 6]} }>
+        <ambientLight intensity={0.7} />
+        <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
+        <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
+        <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
+        <FruitGroup />
+      </Canvas>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

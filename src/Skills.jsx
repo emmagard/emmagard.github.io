@@ -1,42 +1,77 @@
 import React from "react";
-import FlowerMain from "./FlowerMain";
+import { getLcn } from './utils/labelled-classnames';
 import { programmingLanguages, librariesFrameworks, tools } from "./portfolio";
+import { Canvas } from '@react-three/fiber';
+import Banana from "./Banana";
+import Melon from "./Melon";
+import Orange from "./Orange";
+import Apple from "./Apple";
+
+const styles = getLcn({
+  skills: [
+    'flex flex-row justify-between gap-[30px] h-screen'
+  ],
+  skillTypeTitle: [
+    'text-xl font-semibold mb-5 text-black',
+    'sm:text-4xl'
+  ],
+  column1: [
+    'w-[50%]',
+  ],
+  column2: [
+    'w-[50%] hidden',
+    'sm:block'
+  ],
+  skillsList: [
+    'columns-3 mb-[50px] text-black'
+  ],
+  skillsListItem: [
+    'text-4xl mb-[10px]'
+  ]
+});
 
 const Skills = () => {
   return (
-    <section id="projects" className="projects relative flex h-screen pt-[10%] overflow-hidden grid grid-cols-12 gap-2">
-      <div className="column1 relative col-start-2 col-span-4 overflow-hidden">
-        <h1 className="font-display text-5xl font-bold mb-10 text-white">Skills</h1>
-        <div>
-          <h2 className="font-display text-2xl font-semibold mb-5 text-white">Programming Languages</h2>
-          <ul className="columns-2 mb-4 text-white">
-            {programmingLanguages.map((language, index) => (
-              <li className="" key={`programming-language-${index}`}>{language}</li>
-            ))}
-          </ul>
-          <h2 className="font-display text-2xl font-semibold mb-5 text-white">Libraries & Frameworks</h2>
-          <ul className="columns-2 mb-4 text-white">
-            {librariesFrameworks.map((library, index) => (
-              <li className="" key={`library-framework-${index}`}>{library}</li>
-            ))}
-          </ul>
-          <h2 className="font-display text-2xl font-semibold mb-5 text-white">Tools, Platforms & Services</h2>
-          <ul className="columns-2 mb-4 text-white">
-            {tools.map((tool, index) => (
-              <li className="" key={`tool-${index}`}>{tool}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <FlowerMain className="absolute size-[250px] left-[2%] -top-[20%] rotate-z-75" />
-      <FlowerMain className="absolute size-[250px] right-[2%] top-[4%] rotate-z-75" />
+    <section className={styles.skills}>
+      <div className={styles.column1}>
+      <h2 className="text-6xl font-semibold pb-[40px] mt-[30px]">Skills</h2>
+      <div>
+        <h2 className={styles.skillTypeTitle}>Programming Languages</h2>
+        <ul className={styles.skillsList}>
+          {programmingLanguages.map((language, index) => (
+            <li className={styles.skillsListItem} key={`programming-language-${index}`}>{language}</li>
+          ))}
+        </ul>
 
-      <div className="absolute top-[14%] left-[40%] min-w-[60%]">
-      <FlowerMain className={`absolute top-0 left-0 transition`}/>
+        <h2 className={styles.skillTypeTitle}>Libraries & Frameworks</h2>
+        <ul className={styles.skillsList}>
+          {librariesFrameworks.map((library, index) => (
+            <li className={styles.skillsListItem} key={`library-framework-${index}`}>{library}</li>
+          ))}
+        </ul>
+
+        <h2 className={styles.skillTypeTitle}>Tools, Platforms & Services</h2>
+        <ul className={styles.skillsList}>
+          {tools.map((tool, index) => (
+            <li className={styles.skillsListItem} key={`tool-${index}`}>{tool}</li>
+          ))}
+        </ul>
       </div>
-      <FlowerMain className="absolute size-[100px] left-[2%] bottom-[4%] rotate-z-215" />
-      <FlowerMain className="absolute size-[300px] right-[23%] -bottom-[11%] -rotate-z-70" />
-      <FlowerMain className="absolute size-[170px] right-[1%] -bottom-[4%] rotate-z-215" />
+      </div>
+      <div className={styles.column2}>
+        <Canvas>
+          <ambientLight intensity={0.7} />
+          <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
+          <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
+          <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
+          <group position={[-2,-2,0]}>
+            <Orange position={[1.6, 1.5,0]} />
+            <Melon position={[1.6, 3.65, -1]}/>
+            <Apple position={[-1.5,-1,0]}/>
+            <Banana position={[3,1, -3]}/>
+          </group>
+        </Canvas>
+      </div>
     </section>
   );
 };

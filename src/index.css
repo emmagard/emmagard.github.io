@@ -37,6 +37,9 @@
 @theme {
   --animate-emma-spin: spin 8s linear infinite;
   --animate-emma-grow: grow 3s linear;
+  --animate-emma-float: float 8s ease-in-out infinite;
+  --animate-emma-float-delay-1: float 8s 1s ease-in-out infinite;
+  --animate-emma-float-delay-2: float 8s 2s ease-in-out infinite;
 
   --font-display: "Montserrat", "sans-serif";
 
@@ -47,4 +50,19 @@
   --color-light-pink: #fdf0f5;
   --color-mid-pink: #f37aa2;
   --color-shadow: #3f3236;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translate3d(0, 0px, 0);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translate3d(10px, -10px, 0);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translate3d(0, 0px, 0);
+	}
 }
