@@ -14,6 +14,8 @@ const Apple = (props) => {
   useFrame(({clock}) => {
     appleRef.current.rotation.y = clock.elapsedTime;
   });
+
+  console.log(materials);
   
 
   return (

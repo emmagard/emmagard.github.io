@@ -7,10 +7,13 @@ import Apple from "./Apple";
 
 const styles = getLcn({
   projects: [
-    'relative  mb-[100px] h-screen'
+    'relative h-auto mb-[100px]'
+  ],
+  content: [
+    'z-3 flex flex-row justify-between gap-[30px] top-0 bottom-0 left-0 right-0'
   ],
   column1: [
-    'w-[30%]',
+    'w-[30%] z-4',
   ],
   column2: [
     'w-[66%] hidden',
@@ -19,8 +22,11 @@ const styles = getLcn({
   projectsList: [
     'text-black',
   ],
+  projectListItem: [
+    'mb-[10px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]'
+  ],
   projectTitle: [
-    'text-4xl hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
+    'text-4xl',
   ],
   projectImage: [
     'inline',
@@ -59,14 +65,14 @@ const Projects = () => {
 
   return (
     <section className={styles.projects}>
-      <div className="absolute z-3 flex flex-row justify-between gap-[30px]">
+      <div className={styles.content}>
         <div className={styles.column1}>
           <h2 className="text-6xl font-semibold pb-[40px] mt-[30px]">Projects</h2>
           <ul className={styles.projectsList}>
             {portfolio.map((project, index) => (
               <li
                 key={`project-${index}`}
-                className="mb-[10px]" 
+                className={styles.projectListItem}
                 onMouseEnter={() => {handleProjectMouseEnter(index)}}
                 onMouseLeave={() => {handleProjectMouseExit()}}>
                 
@@ -101,15 +107,17 @@ const Projects = () => {
         </div>
       </div>
 
-      <Canvas>
-        <ambientLight intensity={0.7} />
-        <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
-        <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
-        <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-        <group position={[-2,0,4]}>         
-          <Apple />
-        </group>
-      </Canvas>
+      <div className={`absolute top-0 bottom-0 right-0 left-0 ${isMouseLeave ? 'block' : 'hidden'}`}>
+        <Canvas>
+          <ambientLight intensity={0.7} />
+          <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
+          <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
+          <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
+          <group position={[-2,0,4]}>         
+            <Apple />
+          </group>
+        </Canvas>
+      </div>
     </section>
   );
 };

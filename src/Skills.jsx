@@ -9,7 +9,7 @@ import Apple from "./Apple";
 
 const styles = getLcn({
   skills: [
-    'flex flex-row justify-between gap-[30px] h-screen'
+    'relative flex flex-row justify-between gap-[30px] min-h-screen mb-[100px]'
   ],
   skillTypeTitle: [
     'text-xl font-semibold mb-5 text-black',
@@ -58,6 +58,7 @@ const Skills = () => {
         </ul>
       </div>
       </div>
+
       <div className={styles.column2}>
         <Canvas>
           <ambientLight intensity={0.7} />
