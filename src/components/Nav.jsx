@@ -44,7 +44,7 @@ const Nav = ({}) => {
   };
 
   return (
-    <div className="mb-[60px]">
+    <div className="mb-[80px]">
       <button className={styles.navTrigger} onClick={handleOpenMenu}>{isMenuOpen ? 'X' : 'Menu'}</button>
       <nav className={`${isMenuOpen ? 'visible' : 'invisible'} ${styles.nav}`}>
         <ul className={styles.navList}>
