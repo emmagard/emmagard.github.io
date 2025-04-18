@@ -12,14 +12,12 @@ function Home() {
   return (
     <div className="relative w-full h-full">
       <div className="absolute top-0 bottom-0 right-0 left-0 mt-5 px-8">
-        
         <section id="home" className="h-screen">
           <h1 className="text-8xl font-bold mb-[10px]">Emma Gardner</h1>
           <Nav />
           <p className="text-8xl leading-26">A reliable full-stack engineer with a proven track record of building shippable web experiences through a technically agnostic lens.</p>
         </section>
        
-
         <section id="projects">
           <Projects />
         </section>

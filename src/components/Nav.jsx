@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import { getLcn } from '../utils/labelled-classnames';
 import NavItem from './NavItem';
-import FlowerMain from './FlowerMain';
 
 const nav = [
   {
@@ -30,28 +29,15 @@ const styles =  getLcn({
   ],
   nav: [
     'pl-[5px]',
-    ''
   ],
   navList: [
     'flex flex-row gap-[20px]',
-    ''
   ],
 });
 
 const Nav = ({}) => {
   const { pathname } = useLocation();
-
   const [isMenuOpen, setIsMenuOpen] = useState(true);
-  const [activePath, setActivePath] = useState(null);
-
-  const handleIsActive = (leftVal, topVal, path) => {
-    if (leftVal) {
-      setFlowerPosition({
-        transform: `translateX(${leftVal}px) translateY(${topVal}px) rotateZ(234deg)`
-      });
-    }
-    setActivePath(path);
-  };
 
   const handleOpenMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -70,7 +56,7 @@ const Nav = ({}) => {
               isMenuOpen={isMenuOpen}
               isActive={item.path === pathname}
               // handleClick={() => {setIsMenuOpen(false)}}
-              handleIsActive={handleIsActive} />
+            />
           ))}
         </ul>
 
