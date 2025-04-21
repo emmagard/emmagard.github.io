@@ -15,7 +15,7 @@ function Home() {
         <section id="home" className="h-auto mb-[100px]">
           <h1 className="text-8xl font-bold mb-[10px]">Emma Gardner</h1>
           <Nav />
-          <p className="text-8xl leading-26">A reliable full-stack engineer with a proven track record of building shippable web experiences through a technically agnostic lens.</p>
+          <p className="text-8xl leading-26">A reliable full-stack engineer with a proven track record for building dynamic and technically agnostic  web experiences.</p>
         </section>
        
         <div id="projects">
