@@ -23,39 +23,29 @@ const nav = [
 ];
 
 const styles =  getLcn({
-  navTrigger: [
-    'visible absolute font-sans font-semibold text-black',
-    'sm:invisible'
-  ],
   nav: [
-    'pl-[5px]',
+    'pl-0',
+    'sm:pl-[5px]',
   ],
   navList: [
-    'flex flex-row gap-[20px]',
+    'flex flex-row gap-[8px]',
+    'sm:gap-[20px]'
   ],
 });
 
 const Nav = ({}) => {
   const { pathname } = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
-
-  const handleOpenMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
     <div className="mb-[80px]">
-      <button className={styles.navTrigger} onClick={handleOpenMenu}>{isMenuOpen ? 'X' : 'Menu'}</button>
-      <nav className={`${isMenuOpen ? 'visible' : 'invisible'} ${styles.nav}`}>
+      <nav className={styles.nav}>
         <ul className={styles.navList}>
           {nav.map((item, index) => (
             <NavItem
               key={`nav-item-${index}`}
               label={item.label}
               path={item.path}
-              isMenuOpen={isMenuOpen}
               isActive={item.path === pathname}
-              // handleClick={() => {setIsMenuOpen(false)}}
             />
           ))}
         </ul>

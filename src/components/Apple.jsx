@@ -15,9 +15,6 @@ const Apple = (props) => {
     appleRef.current.rotation.y = clock.elapsedTime;
   });
 
-  console.log(materials);
-  
-
   return (
     <group {...props} dispose={null} scale={0.25}>
       <group position={[11, 1, -7]} ref={appleRef}>

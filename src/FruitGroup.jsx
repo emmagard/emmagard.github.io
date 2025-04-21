@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import Apple from './Apple';
-import Banana from './Banana';
-import Orange from './Orange';
-import Melon from './Melon';
+import Apple from './components/Apple';
+import Banana from './components/Banana';
+import Orange from './components/Orange';
+import Melon from './components/Melon';
 
 const FruitGroup = () => {
 

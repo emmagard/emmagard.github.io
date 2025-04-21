@@ -1,24 +1,46 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
-import Banana from "./Banana";
+import { getLcn } from './utils/labelled-classnames';
+import Banana from "./components/Banana";
+
+const styles = getLcn({
+  sectionTitle: [
+    'font-semibold pb-[40px] mt-[30px]',
+    'text-4xl',
+    'sm:text-6xl'
+  ],
+  contactType: [
+    'font-semibold text-black',
+    'text-2xl mb-0',
+    'sm:text-4xl sm:mb-[20px]'
+  ],
+  contactItem: [
+    'text-2xl mb-[24px] wrap-anywhere',
+    'sm:text-4xl sm:mb-[40px]'
+  ],
+  linkedContactItem: [
+    'text-2xl mb-[20px] wrap-anywhere',
+    'sm:text-4xl sm:mb-[40px]'
+  ]
+});
 
 const Contact = () => {
   return (
     <section className="relative h-screen">
       <div className="absolute z-3">
-        <h2 className="text-6xl font-semibold pb-[40px] mt-[30px]">Contact</h2>
+        <h2 className={styles.sectionTitle}>Contact</h2>
 
         <dl className="">
-          <dt className="text-4xl font-semibold mb-2 text-black">Email: </dt>
-          <dd className="text-4xl mb-[40px]">emmagard@gmail.com</dd>
+          <dt className={styles.contactType}>Email: </dt>
+          <dd className={styles.contactItem}>emmagard@gmail.com</dd>
 
-          <dt className="text-4xl font-semibold mb-5 text-black">GitHub: </dt>
-          <dd className="text-4xl mb-[40px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]">
+          <dt className={styles.contactType}>GitHub: </dt>
+          <dd className={styles.linkedContactItem}>
             <a href="https://github.com/emmagard">https://github.com/emmagard</a>
           </dd>
 
-          <dt className="text-4xl font-semibold mb-5 text-black">LinkedIn: </dt>
-          <dd className="text-4xl mb-[40px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]">
+          <dt className={styles.contactType}>LinkedIn: </dt>
+          <dd className={styles.linkedContactItem}>
             <a href="https://www.linkedin.com/in/emmagard/">https://www.linkedin.com/in/emmagard/</a>
           </dd>
         </dl>

@@ -2,31 +2,40 @@ import React from "react";
 import { getLcn } from './utils/labelled-classnames';
 import { programmingLanguages, librariesFrameworks, tools } from "./portfolio";
 import { Canvas } from '@react-three/fiber';
-import Banana from "./Banana";
-import Melon from "./Melon";
-import Orange from "./Orange";
-import Apple from "./Apple";
+import Banana from "./components/Banana";
+import Melon from "./components/Melon";
+import Orange from "./components/Orange";
+import Apple from "./components/Apple";
 
 const styles = getLcn({
   skills: [
     'relative flex flex-row justify-between gap-[30px] min-h-screen mb-[100px]'
   ],
+  sectionTitle: [
+    'font-semibold pb-[40px] mt-[30px]',
+    'text-4xl',
+    'sm:text-6xl'
+  ],
   skillTypeTitle: [
-    'text-xl font-semibold mb-5 text-black',
+    'font-semibold mb-[20px] text-black',
+    'text-2xl',
     'sm:text-4xl'
   ],
   column1: [
-    'w-[50%]',
+    'w-full',
+    'sm:w-[50%]',
   ],
   column2: [
     'w-[50%] hidden',
     'sm:block'
   ],
   skillsList: [
-    'columns-3 mb-[50px] text-black'
+    'columns-2',
+    'xl:columns-3 mb-[50px] text-black'
   ],
   skillsListItem: [
-    'text-4xl mb-[10px]'
+    'text-2xl mb-0',
+    'sm:text-4xl sm:mb-[10px]'
   ]
 });
 
@@ -34,7 +43,7 @@ const Skills = () => {
   return (
     <section className={styles.skills}>
       <div className={styles.column1}>
-      <h2 className="text-6xl font-semibold pb-[40px] mt-[30px]">Skills</h2>
+      <h2 className={styles.sectionTitle}>Skills</h2>
       <div>
         <h2 className={styles.skillTypeTitle}>Programming Languages</h2>
         <ul className={styles.skillsList}>

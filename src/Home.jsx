@@ -1,11 +1,24 @@
 import './index.css';
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
+import { getLcn } from './utils/labelled-classnames';
 import FruitGroup from './FruitGroup.jsx';
 import Nav from './components/Nav.jsx';
 import Projects from './Projects.jsx';
 import Skills from './Skills.jsx';
 import Contact from './Contact.jsx';
+
+const styles = getLcn({
+  title: [
+    'font-bold',
+    'text-4xl mb-[5px]',
+    'sm:text-8xl sm:mb-[10px]',
+  ],
+  summary: [
+    'text-4xl',
+    'sm:text-8xl sm:leading-26',
+  ]
+});
 
 function Home() {
   
@@ -13,9 +26,9 @@ function Home() {
     <div className="relative w-full h-full">
       <div className="absolute top-0 bottom-0 right-0 left-0 mt-5 px-8">
         <section id="home" className="h-auto mb-[100px]">
-          <h1 className="text-8xl font-bold mb-[10px]">Emma Gardner</h1>
+          <h1 className={styles.title}>Emma Gardner</h1>
           <Nav />
-          <p className="text-8xl leading-26">A reliable full-stack engineer with a proven track record for building dynamic and technically agnostic  web experiences.</p>
+          <p className={styles.summary}>A reliable full-stack engineer with a proven track record for building dynamic and technically agnostic  web experiences.</p>
         </section>
        
         <div id="projects">

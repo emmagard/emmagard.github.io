@@ -3,17 +3,23 @@ import portfolio from './portfolio.js';
 import { getLcn } from './utils/labelled-classnames';
 import ProjectImage from './components/ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
-import Apple from "./Apple";
+import Apple from "./components/Apple.jsx";
 
 const styles = getLcn({
   projects: [
     'relative h-auto mb-[100px]'
   ],
+  sectionTitle: [
+    'font-semibold pb-[40px] mt-[30px]',
+    'text-4xl',
+    'sm:text-6xl'
+  ],
   content: [
     'z-3 flex flex-row justify-between gap-[30px] top-0 bottom-0 left-0 right-0'
   ],
   column1: [
-    'w-[30%] z-4',
+    'w-full',
+    'sm:w-[40%] z-4',
   ],
   column2: [
     'w-[66%] hidden',
@@ -23,10 +29,13 @@ const styles = getLcn({
     'text-black',
   ],
   projectListItem: [
-    'mb-[10px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]'
+    'mb-[50px] border-b-gray border-b pb-[20px]',
+    'sm:mb-[10px] sm:border-0 sm:pb-0 sm:hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]'
   ],
   projectTitle: [
-    'text-4xl',
+    'hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
+    'text-2xl',
+    'sm:text-4xl',
   ],
   projectImage: [
     'inline',
@@ -37,13 +46,9 @@ const styles = getLcn({
     'sm:hidden'
   ],
   projectDescriptionSmallScreen: [
-    'block text-sm',
+    'block text-md',
     'sm:hidden'
   ],
-  projectTech: [
-    'hidden',
-    'sm:pl-2 sm:block'
-  ]
 });
 
 const Projects = () => {
@@ -67,7 +72,7 @@ const Projects = () => {
     <section className={styles.projects}>
       <div className={styles.content}>
         <div className={styles.column1}>
-          <h2 className="text-6xl font-semibold pb-[40px] mt-[30px]">Projects</h2>
+          <h2 className={styles.sectionTitle}>Projects</h2>
           <ul className={styles.projectsList}>
             {portfolio.map((project, index) => (
               <li
