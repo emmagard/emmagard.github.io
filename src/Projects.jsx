@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import portfolio from './portfolio.js';
 import { getLcn } from './utils/labelled-classnames';
+import ProjectItem from  './components/ProjectItem.jsx';
 import ProjectImage from './components/ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
 import Apple from "./components/Apple.jsx";
@@ -29,32 +30,12 @@ const styles = getLcn({
   ],
   projectsList: [
     'text-black',
-  ],
-  projectListItem: [
-    'mb-[50px] border-b-gray border-b pb-[20px]',
-    'sm:mb-[10px] sm:border-0 sm:pb-0 sm:hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]'
-  ],
-  projectTitle: [
-    'hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
-    'text-2xl',
-    'sm:text-4xl',
-  ],
-  projectImage: [
-    'inline',
-    'sm:hidden'
-  ],
-  projectImageSmallScreen: [
-    'inline mb-[16px]',
-    'sm:hidden'
-  ],
-  projectDescriptionSmallScreen: [
-    'block text-md',
-    'sm:hidden'
-  ],
+  ]
 });
 
 const Projects = () => {
   const [projectImagePath, setProjectImagePath] = useState(null);
+  const [projectImagePos,  setProjectImagePos] = useState(null);
   const [projectDescription, setProjectDescription] = useState(null);
   const [projectTech, setProjectTech] = useState(null);
   const [isMouseLeave, setIsMouseLeave] = useState(true);
@@ -64,6 +45,9 @@ const Projects = () => {
     setProjectImagePath(portfolio[index].image);
     setProjectDescription(portfolio[index].description);
     setProjectTech(portfolio[index].tech);
+
+    const yPos = index * 16;
+    setProjectImagePos(yPos);
   };
 
   const handleProjectMouseExit = () => {
@@ -77,40 +61,18 @@ const Projects = () => {
           <h2 className={styles.sectionTitle}>Projects</h2>
           <ul className={styles.projectsList}>
             {portfolio.map((project, index) => (
-              <li
-                key={`project-${index}`}
-                className={styles.projectListItem}
-                onMouseEnter={() => {handleProjectMouseEnter(index)}}
-                onMouseLeave={() => {handleProjectMouseExit()}}>
-                
-                <div className="flex flex-row mb-[12px] items-center">
-                  {project.link ? (
-                    <a 
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer">
-                        
-                      <h2 className={styles.projectTitle}>{project.title}</h2>
-                    </a>
-                  ) : (
-                    <h2
-                      className={styles.projectTitle}
-                      onMouseEnter={() => {handleProjectMouseEnter(index)}}
-                      onMouseLeave={() => {handleProjectMouseExit()}}>
-                      {project.title}
-                    </h2>
-                  )}
-                </div>
-              
-                <img src={project.image} className={styles.projectImageSmallScreen}/>
-                <p className={styles.projectDescriptionSmallScreen}>{project.description} (tech: {project.tech.join(', ')})</p>
-              </li>
+              <ProjectItem 
+                project={project}
+                index={index}
+                handleMouseEnter={handleProjectMouseEnter}
+                handleMouseExit={handleProjectMouseExit}
+              />
             ))}
           </ul>
         </div>
 
         <div className={styles.column2Projects}>
-          <ProjectImage imagePath={projectImagePath} description={projectDescription} tech={projectTech} show={!isMouseLeave} />
+          <ProjectImage imagePath={projectImagePath} description={projectDescription} tech={projectTech} show={!isMouseLeave} pos={projectImagePos}/>
         </div>
       </div>
 

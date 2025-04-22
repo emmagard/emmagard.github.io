@@ -14,11 +14,12 @@ const styles = getLcn({
   ]
 });
 
-const ProjectImage = ({imagePath, description, tech, show}) => {
+const ProjectImage = ({imagePath, description, tech, show, pos}) => {
   const showHideStyles = show ? 'opacity-100 duration-800' : 'opacity-0 duration-300';
+  const posStyles = {transform: `translateY(${pos}px)`};
 
   return (
-    <div className={`${styles.projectImage} ${showHideStyles}`}>
+    <div className={`${styles.projectImage} ${showHideStyles}`} style={posStyles}>
       <img src={imagePath} className={styles.image} />
       <div className={styles.description}>
         <p><span className="font-bold">Tech:</span> {tech?.join(', ')}</p>
