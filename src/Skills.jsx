@@ -2,10 +2,7 @@ import React from "react";
 import { getLcn } from './utils/labelled-classnames';
 import { programmingLanguages, librariesFrameworks, tools } from "./portfolio";
 import { Canvas } from '@react-three/fiber';
-import Banana from "./components/Banana";
 import Melon from "./components/Melon";
-import Orange from "./components/Orange";
-import Apple from "./components/Apple";
 
 const styles = getLcn({
   skills: [
@@ -40,6 +37,7 @@ const styles = getLcn({
 });
 
 const Skills = () => {
+  
   return (
     <section className={styles.skills}>
       <div className={styles.column1Skills}>
