@@ -7,12 +7,13 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 const Banana = (props) => {
+  const bananaRef = useRef();
   const { nodes, materials } = useGLTF('/banana.glb');
 
   const position = props.position ?? [6, 2,-3];
   const rotation = props.rotation ?? [0,0,0];
 
-  const bananaRef = useRef();
+  materials['Material.001'].metalness = 0.6;
 
   useFrame(({clock}) => {
     bananaRef.current.rotation.y = clock.elapsedTime;

@@ -7,11 +7,14 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 const Melon = (props) => {
+  const melonRef = useRef();
   const { nodes, materials } = useGLTF('/melon.glb');
 
   const position = props.position ?? [11, 13, -6];
 
-  const melonRef = useRef();
+  materials.melon.metalness = 0.6;
+  materials.melon2.metalness = 0.6;
+  materials.melon3.metalness = 0.6;
 
   useFrame(({clock}) => {
     melonRef.current.rotation.x = Math.sin(clock.elapsedTime/2);

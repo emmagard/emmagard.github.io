@@ -8,11 +8,13 @@ import { useFrame } from '@react-three/fiber';
 
 
 const Orange = (props) => {
+  const orangeRef = useRef();
   const { nodes, materials } = useGLTF('/orange.glb');
 
   const position = props.position ?? [3.75, 3.75, 0];
 
-  const orangeRef = useRef();
+  materials.apple.metalness = 0.6;
+  materials.apple2.metalness = 0.6;
 
   useFrame(({clock}) => {
     orangeRef.current.rotation.z = clock.elapsedTime;

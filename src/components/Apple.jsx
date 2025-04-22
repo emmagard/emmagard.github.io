@@ -7,9 +7,11 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 const Apple = (props) => {
+  const appleRef = useRef();
   const { nodes, materials } = useGLTF('/apple.glb');
 
-  const appleRef = useRef();
+  materials.apple.metalness = 0.6;
+  materials.apple2.metalness = 0.6;
   
   useFrame(({clock}) => {
     appleRef.current.rotation.y = clock.elapsedTime;
