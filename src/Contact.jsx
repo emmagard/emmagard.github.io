@@ -26,8 +26,8 @@ const styles = getLcn({
 
 const Contact = () => {
   return (
-    <section className="relative h-screen">
-      <div className="absolute z-3">
+    <section className="relative h-screen px-8">
+      <div className="relative z-3">
         <h2 className={styles.sectionTitle}>Contact</h2>
 
         <dl className="">
@@ -46,13 +46,15 @@ const Contact = () => {
         </dl>
       </div>
 
-      <Canvas>
-        <ambientLight intensity={0.7} />
-        <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
-        <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
-        <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-        <Banana position={[1.5,-1.75,1]} rotation={[0, 0, 7]}/>
-      </Canvas>
+      <div className="absolute left-0 right-0 top-0 bottom-0">
+        <Canvas>
+          <ambientLight intensity={0.7} />
+          <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
+          <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
+          <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
+          <Banana position={[1.5,-1.75,1]} rotation={[0, 0, 7]}/>
+        </Canvas>
+      </div>
     </section>
   );
 }

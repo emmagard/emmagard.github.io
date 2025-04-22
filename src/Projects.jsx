@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import portfolio from './portfolio.js';
 import { getLcn } from './utils/labelled-classnames';
+import { useMobileBreakpoint } from "./utils/use-breakpoint.js";
 import ProjectImage from './components/ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
 import Apple from "./components/Apple.jsx";
 
 const styles = getLcn({
   projects: [
-    'relative h-auto mb-[100px]'
+    'relative h-auto mb-[100px]  px-8'
   ],
   sectionTitle: [
     'font-semibold pb-[40px] mt-[30px]',
@@ -15,15 +16,16 @@ const styles = getLcn({
     'sm:text-6xl'
   ],
   content: [
-    'z-3 flex flex-row justify-between gap-[30px] top-0 bottom-0 left-0 right-0'
+    'z-3 flex flex-row justify-between gap-[30px]'
   ],
-  column1: [
+  column1Projects: [
     'w-full',
-    'sm:w-[40%] z-4',
+    'sm:w-[50%] z-4',
+    ''
   ],
-  column2: [
-    'w-[66%] hidden',
-    'sm:block'
+  column2Projects: [
+    'hidden',
+    'sm:block sm:w-[40%]'
   ],
   projectsList: [
     'text-black',
@@ -57,6 +59,10 @@ const Projects = () => {
   const [projectTech, setProjectTech] = useState(null);
   const [isMouseLeave, setIsMouseLeave] = useState(true);
 
+  const isMobile = useMobileBreakpoint();
+
+  
+
   const handleProjectMouseEnter = (index) => {
     setIsMouseLeave(false);
     setProjectImagePath(portfolio[index].image);
@@ -71,7 +77,7 @@ const Projects = () => {
   return (
     <section className={styles.projects}>
       <div className={styles.content}>
-        <div className={styles.column1}>
+        <div className={styles.column1Projects}>
           <h2 className={styles.sectionTitle}>Projects</h2>
           <ul className={styles.projectsList}>
             {portfolio.map((project, index) => (
@@ -107,7 +113,7 @@ const Projects = () => {
           </ul>
         </div>
 
-        <div className={styles.column2}>
+        <div className={styles.column2Projects}>
           <ProjectImage imagePath={projectImagePath} description={projectDescription} tech={projectTech} show={!isMouseLeave} />
         </div>
       </div>

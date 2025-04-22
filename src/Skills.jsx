@@ -9,7 +9,15 @@ import Apple from "./components/Apple";
 
 const styles = getLcn({
   skills: [
-    'relative flex flex-row justify-between gap-[30px] min-h-screen mb-[100px]'
+    'relative flex flex-row justify-between gap-[30px] min-h-screen mb-[100px] px-8'
+  ],
+  column1Skills: [
+    'w-full',
+    'sm:w-[50%]',
+  ],
+  column2Skills: [
+    'absolute top-0 left-0 bottom-0 right-0 ',
+    'sm:block sm:w-[100%]'
   ],
   sectionTitle: [
     'font-semibold pb-[40px] mt-[30px]',
@@ -20,14 +28,6 @@ const styles = getLcn({
     'font-semibold mb-[20px] text-black',
     'text-2xl',
     'sm:text-4xl'
-  ],
-  column1: [
-    'w-full',
-    'sm:w-[50%]',
-  ],
-  column2: [
-    'w-[50%] hidden',
-    'sm:block'
   ],
   skillsList: [
     'columns-2',
@@ -42,44 +42,39 @@ const styles = getLcn({
 const Skills = () => {
   return (
     <section className={styles.skills}>
-      <div className={styles.column1}>
-      <h2 className={styles.sectionTitle}>Skills</h2>
-      <div>
-        <h2 className={styles.skillTypeTitle}>Programming Languages</h2>
-        <ul className={styles.skillsList}>
-          {programmingLanguages.map((language, index) => (
-            <li className={styles.skillsListItem} key={`programming-language-${index}`}>{language}</li>
-          ))}
-        </ul>
+      <div className={styles.column1Skills}>
+        <h2 className={styles.sectionTitle}>Skills</h2>
+        <div>
+          <h2 className={styles.skillTypeTitle}>Programming Languages</h2>
+          <ul className={styles.skillsList}>
+            {programmingLanguages.map((language, index) => (
+              <li className={styles.skillsListItem} key={`programming-language-${index}`}>{language}</li>
+            ))}
+          </ul>
 
-        <h2 className={styles.skillTypeTitle}>Libraries & Frameworks</h2>
-        <ul className={styles.skillsList}>
-          {librariesFrameworks.map((library, index) => (
-            <li className={styles.skillsListItem} key={`library-framework-${index}`}>{library}</li>
-          ))}
-        </ul>
+          <h2 className={styles.skillTypeTitle}>Libraries & Frameworks</h2>
+          <ul className={styles.skillsList}>
+            {librariesFrameworks.map((library, index) => (
+              <li className={styles.skillsListItem} key={`library-framework-${index}`}>{library}</li>
+            ))}
+          </ul>
 
-        <h2 className={styles.skillTypeTitle}>Tools, Platforms & Services</h2>
-        <ul className={styles.skillsList}>
-          {tools.map((tool, index) => (
-            <li className={styles.skillsListItem} key={`tool-${index}`}>{tool}</li>
-          ))}
-        </ul>
+          <h2 className={styles.skillTypeTitle}>Tools, Platforms & Services</h2>
+          <ul className={styles.skillsList}>
+            {tools.map((tool, index) => (
+              <li className={styles.skillsListItem} key={`tool-${index}`}>{tool}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      </div>
 
-      <div className={styles.column2}>
+      <div className={styles.column2Skills}>
         <Canvas>
           <ambientLight intensity={0.7} />
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <group position={[-2,-2,0]}>
-            <Orange position={[1.6, 1.5,0]} />
-            <Melon position={[1.6, 3.65, -1]}/>
-            <Apple position={[-1.5,-1,0]}/>
-            <Banana position={[3,1, -3]}/>
-          </group>
+          <Melon position={[2, 1.25, -1]}/>
         </Canvas>
       </div>
     </section>
