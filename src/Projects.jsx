@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import portfolio from './portfolio.js';
 import { getLcn } from './utils/labelled-classnames';
-import { useMobileBreakpoint } from "./utils/use-breakpoint.js";
 import ProjectImage from './components/ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
 import Apple from "./components/Apple.jsx";
@@ -21,11 +20,12 @@ const styles = getLcn({
   column1Projects: [
     'w-full',
     'sm:w-[50%] z-4',
-    ''
+    'lg:w-[35%]'
   ],
   column2Projects: [
     'hidden',
-    'sm:block sm:w-[40%]'
+    'sm:block sm:w-[40%]',
+    'lg:w-[60%]'
   ],
   projectsList: [
     'text-black',
@@ -58,10 +58,6 @@ const Projects = () => {
   const [projectDescription, setProjectDescription] = useState(null);
   const [projectTech, setProjectTech] = useState(null);
   const [isMouseLeave, setIsMouseLeave] = useState(true);
-
-  const isMobile = useMobileBreakpoint();
-
-  
 
   const handleProjectMouseEnter = (index) => {
     setIsMouseLeave(false);
