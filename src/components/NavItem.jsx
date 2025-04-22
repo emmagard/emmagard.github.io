@@ -3,7 +3,7 @@ import { getLcn } from '../utils/labelled-classnames';
 
 const styles = getLcn({
    navItem: [
-    'z-1 mb-[30px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
+    'z-1 mb-[30px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)] cursor-pointer',
     'text-xl',
     'sm:text-4xl'
    ]
@@ -14,7 +14,7 @@ const NavItem = ({label, path}) => {
 
   return (
     <li ref={itemRef} className={styles.navItem}>
-      <a href={path}>{label}</a>
+      <a href={path} className="cursor-pointer">{label}</a>
     </li>
   );
 };

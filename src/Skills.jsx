@@ -74,7 +74,7 @@ const Skills = () => {
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <Melon position={[2, 1.25, -1]}/>
+          <Melon position={[2.75, 1.25, -1]}/>
         </Canvas>
       </div>
     </section>

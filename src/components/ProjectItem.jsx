@@ -28,7 +28,6 @@ const styles = getLcn({
 const ProjectItem = ({project, index, handleMouseEnter, handleMouseExit}) => {
   return (
     <li
-      key={`project-${index}`}
       className={styles.projectListItem}
       onMouseEnter={() => {handleMouseEnter(index)}}
       onMouseLeave={() => {handleMouseExit()}}>

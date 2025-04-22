@@ -14,7 +14,7 @@ const nav = [
   },
   {
     label: 'Resume',
-    path: '#'
+    path: '/emma-gardner-resume-2025.pdf'
   },
   {
     label: 'Contact',

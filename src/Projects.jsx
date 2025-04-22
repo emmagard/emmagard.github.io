@@ -62,6 +62,7 @@ const Projects = () => {
           <ul className={styles.projectsList}>
             {portfolio.map((project, index) => (
               <ProjectItem 
+                key={`project-${index}`}
                 project={project}
                 index={index}
                 handleMouseEnter={handleProjectMouseEnter}
