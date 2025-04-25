@@ -27,7 +27,7 @@ function Home() {
         <section id="home" className="h-auto mb-[100px] px-8">
           <h1 className={styles.title}>Emma Gardner</h1>
           <Nav />
-          <p className={styles.summary}>A reliable full-stack engineer with a proven track record for building dynamic and technically agnostic  web experiences.</p>
+          <p className={styles.summary}>A reliable full-stack engineer with a proven track record for building dynamic and technologically agnostic web experiences.</p>
         </section>
        
         <div id="projects">
