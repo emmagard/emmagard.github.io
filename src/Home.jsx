@@ -16,14 +16,14 @@ const styles = getLcn({
   ],
   summary: [
     'text-4xl',
-    'sm:text-8xl sm:leading-26',
+    'sm:text-7xl sm:leading-21',
   ]
 });
 
 function Home() {
   return (
     <div className="relative w-full h-full">
-      <div className="pt-5">
+      <div className="pt-5 max-w-[1200px] my-0 mx-auto">
         <section id="home" className="h-auto mb-[100px] px-8">
           <h1 className={styles.title}>Emma Gardner</h1>
           <Nav />

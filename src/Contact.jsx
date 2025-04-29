@@ -2,6 +2,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { getLcn } from './utils/labelled-classnames';
 import Banana from "./components/Banana";
+import Orange from './components/Orange';
 
 const styles = getLcn({
   sectionTitle: [
@@ -19,8 +20,8 @@ const styles = getLcn({
     'sm:text-4xl sm:mb-[40px]'
   ],
   linkedContactItem: [
-    'text-2xl mb-[20px] wrap-anywhere',
-    'sm:text-4xl sm:mb-[40px]'
+    'text-2xl mb-[20px] wrap-anywhere hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
+    'sm:text-4xl sm:mb-[40px] sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]'
   ]
 });
 
@@ -52,7 +53,8 @@ const Contact = () => {
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.9}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <Banana position={[1.5,-1.75,1]} rotation={[0, 0, 7]}/>
+          <Banana position={[2.25,2,0]} rotation={[0, 0, 7]}/>
+          <Orange position={[0, -0.65, 1]}/>
         </Canvas>
       </div>
     </section>

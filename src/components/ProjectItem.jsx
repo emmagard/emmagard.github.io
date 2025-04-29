@@ -3,13 +3,13 @@ import { getLcn } from '../utils/labelled-classnames';
 
 const styles = getLcn({
   projectListItem: [
-    'mb-[50px] border-b-gray border-b pb-[20px]',
-    'sm:mb-[10px] sm:border-0 sm:pb-0 sm:hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]'
+    'mb-[50px] border-b-gray border-b pb-[20px] hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
+    'sm:mb-[10px] sm:border-0 sm:pb-0 sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]'
   ],
   projectTitle: [
     'hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
     'text-2xl',
-    'sm:text-4xl',
+    'sm:text-4xl sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]',
   ],
   projectImage: [
     'inline',
