@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation } from 'react-router-dom';
 import { getLcn } from '../utils/labelled-classnames';
 import NavItem from './NavItem';
 
@@ -34,8 +33,6 @@ const styles =  getLcn({
 });
 
 const Nav = ({}) => {
-  const { pathname } = useLocation();
-
   return (
     <div className="mb-[80px]">
       <nav className={styles.nav}>
@@ -45,7 +42,6 @@ const Nav = ({}) => {
               key={`nav-item-${index}`}
               label={item.label}
               path={item.path}
-              isActive={item.path === pathname}
             />
           ))}
         </ul>
