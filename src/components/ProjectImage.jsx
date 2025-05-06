@@ -25,8 +25,8 @@ const ProjectImage = ({imagePath, description, tech, show, pos}) => {
         <div className="flex">
           <h4 className="font-bold no-underline mr-[8px]">Tech:</h4>
           <ul className="flex flex-wrap gap-x-3">
-            {tech.map((item)=> (
-              <li className="underline">{item}</li>
+            {tech?.length && tech.map((item, i)=> (
+              <li key={`${item}-${i}`} className="underline">{item}</li>
             ))}
           </ul>
         
