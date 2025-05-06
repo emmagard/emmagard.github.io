@@ -39,15 +39,15 @@ const ProjectItem = ({project, index, handleMouseEnter, handleMouseExit}) => {
             target="_blank"
             rel="noreferrer">
               
-            <h2 className={styles.projectTitle}>{project.title}</h2>
+            <h3 className={styles.projectTitle}>{project.title}</h3>
           </a>
         ) : (
-          <h2
+          <h3
             className={styles.projectTitle}
             onMouseEnter={() => {handleMouseEnter(index)}}
             onMouseLeave={() => {handleMouseExit()}}>
             {project.title}
-          </h2>
+          </h3>
         )}
       </div>
     

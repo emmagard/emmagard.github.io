@@ -22,8 +22,19 @@ const ProjectImage = ({imagePath, description, tech, show, pos}) => {
     <div className={`${styles.projectImage} ${showHideStyles}`} style={posStyles}>
       <img src={imagePath} className={styles.image} />
       <div className={styles.description}>
-        <p><span className="font-bold">Tech:</span> {tech?.join(', ')}</p>
-        <p className="text-black"><span className="font-bold">Description:</span> {description}</p>
+        <div className="flex">
+          <h4 className="font-bold no-underline mr-[8px]">Tech:</h4>
+          <ul className="flex flex-wrap gap-x-3">
+            {tech.map((item)=> (
+              <li className="underline">{item}</li>
+            ))}
+          </ul>
+        
+        </div>
+        <div className="text-black">
+          <h4 className="font-bold inline mr-[6px]">Description:</h4> 
+          <p className="inline">{description}</p>
+        </div>
       </div>
     </div>
   );
