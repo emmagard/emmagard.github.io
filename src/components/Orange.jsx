@@ -15,6 +15,12 @@ const Orange = (props) => {
 
   materials.apple.metalness = 0.6;
   materials.apple2.metalness = 0.6;
+  materials.apple.color = {
+    r: 1,
+    g: 0.3,
+    b: 0,
+    isColor: true
+  };
 
   useFrame(({clock}) => {
     orangeRef.current.rotation.z = clock.elapsedTime;
