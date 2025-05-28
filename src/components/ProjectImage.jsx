@@ -3,11 +3,11 @@ import { getLcn } from '../utils/labelled-classnames';
 
 const styles = getLcn({
   projectImage: [
-    'hidden relative rounded-md shadow-md shadow-shadow/50',
+    'hidden relative rounded-md shadow-[0_0_26px_rgb(158_158_158_/_0.9)]',
     'sm:block'
   ],
   image: [
-    'relative w-full z-6 rounded-t-md transition border-b  mt-[88px]'
+    'relative w-full z-6 rounded-t-md transition border-b mt-[20px]'
   ],
   description: [
     'p-[20px]'

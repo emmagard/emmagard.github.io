@@ -13,7 +13,7 @@ const FruitGroup = () => {
   });
 
   return (
-    <group ref={fruitGroupRef} position={[6.5, 3.25, -1]}>
+    <group ref={fruitGroupRef} position={[6.5, 2.75, -1.5]}>
       <group position={[1,1,0]} rotation={[0, 0, 2.5]}>
         <Apple />
         <Banana />

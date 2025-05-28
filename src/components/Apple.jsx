@@ -9,13 +9,18 @@ import { useFrame } from '@react-three/fiber';
 const Apple = (props) => {
   const appleRef = useRef();
   const { nodes, materials } = useGLTF('/apple.glb');
-
-  materials.apple.metalness = 0.6;
-  materials.apple2.metalness = 0.6;
   
+  materials.apple.metalness = 1;
+  materials.apple.roughness = 0.1;
+  materials.apple2.metalness = 1;
+
   useFrame(({clock}) => {
     appleRef.current.rotation.y = clock.elapsedTime;
   });
+
+  if (appleRef.current ) {
+    appleRef.current.rotation.x = 0.8;
+  }
 
   return (
     <group {...props} dispose={null} scale={0.25}>

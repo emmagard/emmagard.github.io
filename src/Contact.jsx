@@ -1,36 +1,30 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Environment } from '@react-three/drei';
 import { getLcn } from './utils/labelled-classnames';
 import Banana from "./components/Banana";
 import Orange from './components/Orange';
 
 const styles = getLcn({
-  sectionTitle: [
-    'font-semibold pb-[40px] mt-[30px]',
-    'text-4xl',
-    'sm:text-6xl'
-  ],
   contactType: [
     'font-semibold text-black',
     'text-2xl mb-0',
-    'sm:text-4xl sm:mb-[20px]'
+    'sm:text-3xl sm:mb-[20px]'
   ],
   contactItem: [
-    'text-2xl mb-[24px] wrap-anywhere',
-    'sm:text-4xl sm:mb-[40px]'
+    'text-1xl mb-[24px] wrap-anywhere',
+    'sm:text-2xl sm:mb-[40px]'
   ],
   linkedContactItem: [
-    'text-2xl mb-[20px] wrap-anywhere hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
-    'sm:text-4xl sm:mb-[40px] sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]'
+    'text-1xl mb-[20px] wrap-anywhere hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
+    'sm:text-2xl sm:mb-[40px] sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]'
   ]
 });
 
 const Contact = () => {
   return (
-    <section className="relative h-screen px-8">
+    <section className="relative px-[20px] sm:px-8 h-full">
       <div className="relative z-3">
-        <h2 className={styles.sectionTitle}>Contact</h2>
-
         <dl className="">
           <dt className={styles.contactType}>Email: </dt>
           <dd className={styles.contactItem}>emmagard@gmail.com</dd>
@@ -49,12 +43,13 @@ const Contact = () => {
 
       <div className="absolute left-0 right-0 top-0 bottom-0">
         <Canvas>
+          <Environment files={"background-contact.jpeg"}/>
           <ambientLight intensity={1} />
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.9}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <Banana position={[2.25,2,0]} rotation={[0, 0, 7]}/>
-          <Orange position={[0, -0.65, 1]}/>
+          <Banana position={[2,1,1.5]} rotation={[0, 0, 7]}/>
+          <Orange position={[0, -0.25, 1.25]}/>
         </Canvas>
       </div>
     </section>

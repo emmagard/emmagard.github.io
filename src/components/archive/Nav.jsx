@@ -1,6 +1,6 @@
 import React from "react";
-import { getLcn } from '../utils/labelled-classnames';
-import NavItem from './NavItem';
+import { getLcn } from '../../utils/labelled-classnames';
+import NavItem from '../NavItem';
 
 const nav = [
   {

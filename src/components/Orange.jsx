@@ -6,14 +6,14 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-
 const Orange = (props) => {
   const orangeRef = useRef();
   const { nodes, materials } = useGLTF('/orange.glb');
 
   const position = props.position ?? [3.75, 3.75, 0];
 
-  materials.apple.metalness = 0.6;
+  materials.apple.metalness = 1;
+  materials.apple.roughness = 0.1;
   materials.apple2.metalness = 0.6;
   materials.apple.color = {
     r: 1,

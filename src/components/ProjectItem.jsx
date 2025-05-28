@@ -8,8 +8,8 @@ const styles = getLcn({
   ],
   projectTitle: [
     'hover:text-shadow-[-4px_-1px_5px_rgb(158_158_158_/_0.6)]',
-    'text-2xl',
-    'sm:text-4xl sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]',
+    'text-2xl font-semibold',
+    'sm:text-3xl sm:font-normal sm:hover:text-shadow-[-10px_-10px_5px_rgb(158_158_158_/_0.9)]',
   ],
   projectImage: [
     'inline',

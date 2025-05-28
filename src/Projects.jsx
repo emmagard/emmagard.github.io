@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Environment } from '@react-three/drei';
 import portfolio from './portfolio.js';
 import { getLcn } from './utils/labelled-classnames';
 import ProjectItem from  './components/ProjectItem.jsx';
@@ -8,12 +9,8 @@ import Apple from "./components/Apple.jsx";
 
 const styles = getLcn({
   projects: [
-    'relative h-auto mb-[100px]  px-8'
-  ],
-  sectionTitle: [
-    'font-semibold pb-[40px] mt-[30px]',
-    'text-4xl',
-    'sm:text-6xl'
+    'relative h-auto mb-[100px] px-[20px]',
+    'sm:px-8'
   ],
   content: [
     'z-3 flex flex-row justify-between gap-[30px]'
@@ -58,7 +55,6 @@ const Projects = () => {
     <section className={styles.projects}>
       <div className={styles.content}>
         <div className={styles.column1Projects}>
-          <h2 className={styles.sectionTitle}>Projects</h2>
           <ul className={styles.projectsList}>
             {portfolio.map((project, index) => (
               <ProjectItem 
@@ -78,12 +74,13 @@ const Projects = () => {
       </div>
 
       <div className={`absolute top-0 bottom-0 right-0 left-0 ${isMouseLeave ? 'block' : 'hidden'}`}>
-        <Canvas>
+        <Canvas camera={ {fov: 75, near: 0.1, far: 1000, position: [0, 0, 0]} }>
+          <Environment files={"background-project.jpeg"}/>
           <ambientLight intensity={0.7} />
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <group position={[-2,0,4]}>         
+          <group position={[-2,0,0]}>         
             <Apple />
           </group>
         </Canvas>
