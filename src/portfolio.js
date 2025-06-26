@@ -28,8 +28,8 @@ const projects = [
         tech: ["Next.js", "React", "Contentful", "GraphQL"]
     },
     {
-        title: "Everytown",
-        description: "A suite of sites dedicated to policy change for gun safety.",
+        title: "Everytown 🏆",
+        description: "Webby Award Winner 🏆 A suite of sites dedicated to policy change for gun safety.",
         image: "/everytown.png",
         link: "https://www.everytown.org/",
         tech: ["WordPress Multisite", "Algolia", "JavaScript"]
@@ -42,8 +42,8 @@ const projects = [
         tech: ["Flask", "Python", "Adafruit thermal printer"]
     },
     {
-        title: "Grist",
-        description: "A publishing platform to host Grist's archive of articles about climate solutions.",
+        title: "Grist 🏆",
+        description: "Webby Award Honoree 🏆 A publishing platform to host Grist's archive of articles about climate solutions.",
         image: "/grist.png",
         link: "https://grist.org/",
         tech: ["WordPress", "JavaScript"]
@@ -63,15 +63,15 @@ const projects = [
         tech: ["WordPress", "JavaScript"]
     },
     {
-        title: "MIT Climate Primer",
-        description: "An interactive static site to explain the basics of climate science and climate change.",
+        title: "MIT Climate Primer 🏆",
+        description: "Webby Award Winner 🏆 An interactive static site to explain the basics of climate science and climate change.",
         image: "/mitclimate.png",
         link: "https://climateprimer.mit.edu/",
         tech: ["Vue.js"]
     },
     {
-        title: "Moms Demand Action",
-        description: "An informational and interactive platform for the grassroots gun safety organization, Moms Demand Action.",
+        title: "Moms Demand Action 🏆",
+        description: "Webby Award Honoree 🏆 An informational and interactive platform for the grassroots gun safety organization, Moms Demand Action.",
         image: "/momsdemand.png",
         link: "https://momsdemandaction.org/",
         tech: ["WordPress", "JavaScript"]
@@ -98,8 +98,8 @@ const projects = [
         tech: ["Squarespace"]
     },
     {
-        title: "New American Economy",
-        description: "An informational and interactive platform for the research organization New American Economy.",
+        title: "New American Economy 🏆",
+        description: "Webby Award Honoree 🏆 An informational and interactive platform for the research organization New American Economy.",
         image: "/newamerican.png",
         link: "https://www.newamericaneconomy.org/",
         tech: ["WordPress", "JavaScript"]
