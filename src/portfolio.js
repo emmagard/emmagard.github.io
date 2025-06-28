@@ -44,7 +44,7 @@ const projects = [
     {
         title: "Grist 🏆",
         description: "Webby Award Honoree 🏆 A publishing platform to host Grist's archive of articles about climate solutions.",
-        image: "/grist.png",
+        image: "/grist1.png",
         link: "https://grist.org/",
         tech: ["WordPress", "JavaScript"]
     },
