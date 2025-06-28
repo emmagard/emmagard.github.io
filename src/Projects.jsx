@@ -43,7 +43,7 @@ const Projects = () => {
     setProjectDescription(portfolio[index].description);
     setProjectTech(portfolio[index].tech);
 
-    const yPos = index * 16;
+    const yPos = index * 10;
     setProjectImagePos(yPos);
   };
 
@@ -69,7 +69,13 @@ const Projects = () => {
         </div>
 
         <div className={styles.column2Projects}>
-          <ProjectImage imagePath={projectImagePath} description={projectDescription} tech={projectTech} show={!isMouseLeave} pos={projectImagePos}/>
+          <ProjectImage
+            imagePath={projectImagePath}
+            description={projectDescription}
+            tech={projectTech}
+            show={!isMouseLeave}
+            pos={projectImagePos}
+          />
         </div>
       </div>
 
