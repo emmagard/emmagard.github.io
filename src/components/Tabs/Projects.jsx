@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Environment } from '@react-three/drei';
-import portfolio from './portfolio.js';
-import { getLcn } from './utils/labelled-classnames';
-import ProjectItem from  './components/ProjectItem.jsx';
-import ProjectImage from './components/ProjectImage.jsx';
+import portfolio from '../../portfolio.js';
+import { getLcn } from '../../utils/labelled-classnames.jsx';
+import ProjectItem from  '../ProjectItem.jsx';
+import ProjectImage from '../ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
-import Apple from "./components/Apple.jsx";
+import Apple from "../Apple.jsx";
 
 const styles = getLcn({
   projects: [

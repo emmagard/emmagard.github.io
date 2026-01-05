@@ -1,9 +1,9 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
-import { getLcn } from './utils/labelled-classnames';
-import Banana from "./components/Banana";
-import Orange from './components/Orange';
+import { getLcn } from '../../utils/labelled-classnames';
+import Banana from "../Banana";
+import Orange from '../Orange';
 
 const styles = getLcn({
   contactType: [

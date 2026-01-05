@@ -7,7 +7,7 @@ const styles = getLcn({
     'sm:block'
   ],
   image: [
-    'relative w-full z-6 rounded-t-md transition border-b mt-[20px]'
+    'relative w-full z-6 rounded-t-md aspect-3/2 object-cover transition border-b mt-[20px]'
   ],
   description: [
     'p-[20px]'

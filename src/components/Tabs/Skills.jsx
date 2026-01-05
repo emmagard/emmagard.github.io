@@ -1,10 +1,10 @@
 import React from "react";
-import { getLcn } from './utils/labelled-classnames';
+import { getLcn } from '../../utils/labelled-classnames';
 import { Environment } from '@react-three/drei';
-import { programmingLanguages, librariesFrameworks, tools } from "./portfolio";
+import { programmingLanguages, librariesFrameworks, tools } from "../../portfolio";
 import { Canvas } from '@react-three/fiber';
-import Melon from "./components/Melon";
-import SkillsList from "./components/SkillsList";
+import Melon from "../Melon";
+import SkillsList from "../SkillsList";
 
 const styles = getLcn({
   skills: [
