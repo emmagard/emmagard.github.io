@@ -78,11 +78,4 @@ const App = () => (
   </div>
 );
 
-// to do:
-// refactor
-// update image sizes to be 3:2
-// add cornell and mit engineering projects 
-// add a photo of my self
-// update the contact page to look better - maybe put my photo there
-
 export default App;
