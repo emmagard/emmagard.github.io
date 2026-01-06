@@ -81,7 +81,7 @@ const Projects = () => {
 
       <div className={`absolute top-0 bottom-0 right-0 left-0 ${isMouseLeave ? 'block' : 'hidden'}`}>
         <Canvas camera={ {fov: 75, near: 0.1, far: 1000, position: [0, 0, 0]} }>
-          <Environment files={"background-project.jpeg"}/>
+          <Environment files={"background-projects.jpg"}/>
           <ambientLight intensity={0.7} />
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
