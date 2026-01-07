@@ -23,7 +23,7 @@ const ProjectImage = ({imagePath, description, tech, show, pos}) => {
       <img src={imagePath} className={styles.image} />
       <div className={styles.description}>
         <div className="flex">
-          <h4 className="font-bold no-underline mr-[8px]">Tech:</h4>
+          <h4 className="font-bold no-underline mr-[8px] tracking-[1px]">Tech:</h4>
           <ul className="flex flex-wrap gap-x-3">
             {tech?.length && tech.map((item, i)=> (
               <li key={`${item}-${i}`} className="underline">{item}</li>
@@ -32,7 +32,7 @@ const ProjectImage = ({imagePath, description, tech, show, pos}) => {
         
         </div>
         <div className="text-black">
-          <h4 className="font-bold inline mr-[6px]">Description:</h4> 
+          <h4 className="font-bold inline mr-[6px] tracking-[1px]">Description:</h4> 
           <p className="inline">{description}</p>
         </div>
       </div>

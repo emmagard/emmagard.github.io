@@ -1,37 +1,27 @@
 @import "tailwindcss";
 
-/* montserrat-300 - latin */
 @font-face {
   font-display: swap;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/assets/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
-}
-
-/* montserrat-500 - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Montserrat';
+  font-family: 'Glacial Indifference';
   font-style: normal;
   font-weight: 500;
-  src: url('/assets/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/glacial-indifference.regular.otf') format('opentype');
 }
-/* montserrat-600 - latin */
+
 @font-face {
   font-display: swap;
-  font-family: 'Montserrat';
+  font-family: 'Glacial Indifference';
   font-style: normal;
-  font-weight: 600;
-  src: url('/assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  src: url('/assets/fonts/glacial-indifference.bold.otf') format('opentype');
 }
-/* montserrat-700 - latin */
+
 @font-face {
   font-display: swap;
-  font-family: 'Montserrat';
+  font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
-  src: url('/assets/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  src: url('/assets/fonts/league-spartan.bold.otf') format('opentype');
 }
 
 @theme {
@@ -41,7 +31,8 @@
   --animate-emma-float-delay-1: float 8s 1s ease-in-out infinite;
   --animate-emma-float-delay-2: float 8s 2s ease-in-out infinite;
 
-  --font-display: "Montserrat", "sans-serif";
+  --font-display: "League Spartan", "sans-serif";
+  --font-sans: "Glacial Indifference", "sans-serif";
 
   --color-pink-fire: #e91e63;
   --color-slimer: #4fe91e;

@@ -10,8 +10,8 @@ const Apple = (props) => {
   const appleRef = useRef();
   const { nodes, materials } = useGLTF('/apple.glb');
   
-  materials.apple.metalness = 1;
-  materials.apple.roughness = 0.1;
+  materials.apple.metalness = 0.9;
+  materials.apple.roughness = 0.2;
   materials.apple2.metalness = 1;
 
   useFrame(({clock}) => {

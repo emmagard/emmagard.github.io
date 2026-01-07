@@ -13,8 +13,15 @@ const Banana = (props) => {
   const position = props.position ?? [6, 2,-3];
   const rotation = props.rotation ?? [0,0,0];
 
-  materials['Material.001'].metalness = 0.8;
-  materials['Material.001'].roughness = 0.2;
+  materials['Material.001'].metalness = 1;
+  materials['Material.001'].roughness = 0.3;
+
+  materials['Material.001'].color = {
+    r: 1,
+    g: 0.8,
+    b: 0,
+    isColor: true
+  };
 
   useFrame(({clock}) => {
     bananaRef.current.rotation.y = clock.elapsedTime;

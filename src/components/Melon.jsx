@@ -12,11 +12,11 @@ const Melon = (props) => {
 
   const position = props.position ?? [11, 13, -6];
 
-  materials.melon.metalness = 1;
+  materials.melon.metalness = 0.9;
   materials.melon2.metalness = 1;
   materials.melon3.metalness = 1;
 
-  materials.melon.roughness = 0;
+  materials.melon.roughness = 0.2;
   materials.melon2.roughness = 0.2;
   materials.melon3.roughness = 0.2;
 

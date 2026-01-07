@@ -10,7 +10,7 @@ const projects = [
         title: "Threadable",
         description: "A social e-reader application built for both web and iOS.",
         image: "/threadable.jpg",
-        link: "https://www.threadablebooks.com/web",
+        link: "",
         tech: ["React Native", "React", "TypeScript", "Ruby on Rails", "Rspec", "Firebase"]
     },
     {
