@@ -3,6 +3,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { getLcn } from './utils/labelled-classnames.jsx';
+import { useViewportSize } from './hooks/useViewportSize';
 import FruitGroup from './FruitGroup.jsx';
 import Projects from './components/Tabs/Projects.jsx';
 import Skills from './components/Tabs/Skills.jsx';
@@ -36,10 +37,16 @@ const styles = getLcn({
   ]
 });
 
-const App = () => (
-  <div className="h-screen">
-    <div className="relative w-full h-full">
-      <div className={styles.siteContent}>
+const App = () => {
+  const viewportSize = useViewportSize();
+  const isMobile = viewportSize.width < 640;
+  const fruitGroupPos = isMobile ? [2, 3, 0] : [6, 2.75, -0.8];
+
+  
+  return (
+    <div className="h-screen" style={{ height: '100dvh' }}>
+      <div className="relative w-full h-full">
+        <div className={styles.siteContent}>
           <h1 className={styles.title}>EMMA GARDNER</h1>
           <Tabs className={styles.tabsContainer}>
             <div className={styles.tabsNav}>
@@ -58,7 +65,7 @@ const App = () => (
                     <spotLight color="#ffffff" position={[3, 1, 4]}  intensity={1} castShadow={true} />
                     <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={1} />
                     <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={1} />
-                    <FruitGroup />
+                    <FruitGroup position={fruitGroupPos} />
                   </Canvas>
                 </div>
               </TabPanel>
@@ -73,9 +80,10 @@ const App = () => (
               </TabPanel>
             </div>
           </Tabs>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default App;

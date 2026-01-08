@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Environment } from '@react-three/drei';
 import portfolio from '../../portfolio.js';
 import { getLcn } from '../../utils/labelled-classnames.jsx';
+import { useViewportSize } from '../../hooks/useViewportSize';
 import ProjectItem from  '../ProjectItem.jsx';
 import ProjectImage from '../ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
@@ -36,6 +37,9 @@ const Projects = () => {
   const [projectDescription, setProjectDescription] = useState(null);
   const [projectTech, setProjectTech] = useState(null);
   const [isMouseLeave, setIsMouseLeave] = useState(true);
+
+  const viewportSize = useViewportSize();
+  const isMobile = viewportSize.width < 640;
 
   const handleProjectMouseEnter = (index) => {
     setIsMouseLeave(false);
@@ -79,18 +83,20 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className={`absolute top-0 bottom-0 right-0 left-0 ${isMouseLeave ? 'block' : 'hidden'}`}>
-        <Canvas camera={ {fov: 75, near: 0.1, far: 1000, position: [0, 0, 0]} }>
-          <Environment files={"background-projects.jpg"}/>
-          <ambientLight intensity={0.7} />
-          <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
-          <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
-          <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <group position={[-2,0,0]}>         
-            <Apple />
-          </group>
-        </Canvas>
-      </div>
+      {!isMobile && (
+        <div className={`absolute top-0 bottom-0 right-0 left-0 ${isMouseLeave ? 'block' : 'hidden'}`}>
+          <Canvas camera={ {fov: 75, near: 0.1, far: 1000, position: [0, 0, 0]} }>
+            <Environment files={"background-projects.jpg"}/>
+            <ambientLight intensity={0.7} />
+            <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
+            <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.1}/>
+            <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
+            <group position={[-2.2, -0.18,0.5]}>         
+              <Apple />
+            </group>
+          </Canvas>
+        </div>
+      )}
     </section>
   );
 };

@@ -4,7 +4,7 @@ import { getLcn } from '../utils/labelled-classnames';
 const styles = getLcn({
   skillsListTitle: [
     'font-semibold text-black',
-    'text-2xl mb-[10px]',
+    'text-xl mb-[10px]',
     'sm:text-3xl sm:mb-[20px]'
   ],
   skillsList: [
@@ -13,7 +13,7 @@ const styles = getLcn({
     'sm:mb-[50px]'
   ],
   skillsListItem: [
-    'text-1xl mb-0',
+    'text-md mb-0',
     'sm:text-2xl sm:mb-[4px]'
   ]
 });
