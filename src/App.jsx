@@ -17,7 +17,7 @@ const styles = getLcn({
     'sm:text-[6rem] sm:mb-[10px] sm:ml-[30px]',
   ],
   summary: [
-    'text-xl relative z-2 mx-[20px] mb-[30px]',
+    'text-2xl relative z-2 mx-[20px] mb-[30px]',
     'sm:text-[4rem] sm:leading-[1.2] sm:mx-[30px] sm:mb-[50px]',
   ],
   tabsNav: [
@@ -55,8 +55,8 @@ const App = () => {
               <Tab index={2}><span className={styles.tabsNavItem}><h2>Skills</h2></span></Tab>
               <Tab index={3}><span className={styles.tabsNavItem}><h2>Contact</h2></span></Tab>
             </div>
-            <div className="mt-[30px] sm:mt-[50px] h-full flex flex-col justify-end">
-              <TabPanel index={0} className="">
+            <div className="mt-[30px] sm:mt-[50px] h-full">
+              <TabPanel index={0} className="h-full flex flex-col justify-end">
                 <p className={styles.summary}>A reliable full-stack engineer with a proven ability to build dynamic, scalable, and technology-agnostic web experiences.</p>
                 <div className="absolute top-0 bottom-0 right-0 left-0">
                   <Canvas camera={ {fov: 75, near: 0.1, far: 1000, position: [1, 0, 6]} }>
@@ -69,14 +69,14 @@ const App = () => {
                   </Canvas>
                 </div>
               </TabPanel>
-              <TabPanel index={1}>
+              <TabPanel index={1} className="flex flex-col justify-end">
                 <Projects />
               </TabPanel>
-              <TabPanel index={2} className="grow">
+              <TabPanel index={2} className="flex flex-col">
                 <Skills />
               </TabPanel>
-              <TabPanel index={3} className="grow">
-              <Contact />
+              <TabPanel index={3} className="flex flex-col justify-end h-full">
+                <Contact />
               </TabPanel>
             </div>
           </Tabs>
