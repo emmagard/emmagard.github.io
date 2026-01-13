@@ -1,13 +1,12 @@
-import React from "react";
-import { getLcn } from '../../utils/labelled-classnames';
 import { Environment } from '@react-three/drei';
-import { programmingLanguages, librariesFrameworks, tools } from "../../portfolio";
+import { programmingLanguages, librariesFrameworks, tools } from '../../../portfolio.js';
 import { Canvas } from '@react-three/fiber';
-import {useViewportSize} from '../../hooks/useViewportSize';
-import Melon from "../Melon";
-import SkillsList from "../SkillsList";
+import { useLabelledClassnames } from '../../../shared/hooks/useLabelledClassnames.js';
+import { useMobileViewport } from '../../../shared/hooks/useViewportSize.js';
+import Melon from "../../../shared/components/Melon";
+import { SkillsList } from "./SkillsList";
 
-const styles = getLcn({
+const styles = useLabelledClassnames({
   skills: [
     'flex flex-row justify-between gap-[30px] min-h-full',
     'px-[20px]',
@@ -23,20 +22,17 @@ const styles = getLcn({
   ],
 });
 
-const Skills = () => {
-  const viewportSize = useViewportSize();
-  const isMobile = viewportSize.width < 640;
+export const Skills = () => {
+  const isMobile = useMobileViewport();
   const melonPos = isMobile ? [0.5, -0.2, 1.2] : [1, 0, 1.6];
   const melonRot = isMobile ? [0.1, 3.8, 0.8] : [0.2, 3, 0.5];
 
   return (
     <section className={styles.skills}>
       <div className={styles.column1Skills}>
-        <div>
-          <SkillsList title={'Libraries & Frameworks'} items={librariesFrameworks} />
-          <SkillsList title={'Programming Languages'} items={programmingLanguages} />
-          <SkillsList title={'Tools, Platforms & Services'} items={tools} />
-        </div>
+        <SkillsList title={'Libraries & Frameworks'} items={librariesFrameworks} />
+        <SkillsList title={'Programming Languages'} items={programmingLanguages} />
+        <SkillsList title={'Tools, Platforms & Services'} items={tools} />
       </div>
 
       <div className={styles.column2Skills}>
@@ -52,5 +48,3 @@ const Skills = () => {
     </section>
   );
 };
-
-export default Skills;

@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import Apple from './components/Apple';
-import Banana from './components/Banana';
-import Orange from './components/Orange';
-import Melon from './components/Melon';
+import Apple from '../../../shared/components/Apple';
+import Banana from '../../../shared/components/Banana';
+import Orange from '../../../shared/components/Orange';
+import Melon from '../../../shared/components/Melon';
 
-const FruitGroup = (props) => {
+export const FruitGroup = (props) => {
   const fruitGroupRef = useRef();
-
-    const position = props.position ?? [6.5, 2.75, -1.5];
+  const position = props.position ?? [6.5, 2.75, -1.5];
   
   useFrame(({clock}) => {
     fruitGroupRef.current.rotation.z = clock.elapsedTime / 5;
@@ -39,5 +38,3 @@ const FruitGroup = (props) => {
     </group>
   );
 };
-
-export default FruitGroup;

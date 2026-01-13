@@ -26,3 +26,8 @@ export const useViewportSize = () => {
 
   return viewportSize;
 }
+
+export const useMobileViewport = () => {
+  const viewportSize = useViewportSize();
+  return viewportSize.width < 640;
+}

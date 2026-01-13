@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Environment } from '@react-three/drei';
-import portfolio from '../../portfolio.js';
-import { getLcn } from '../../utils/labelled-classnames.jsx';
-import { useViewportSize } from '../../hooks/useViewportSize';
-import ProjectItem from  '../ProjectItem.jsx';
-import ProjectImage from '../ProjectImage.jsx';
+import portfolio from '../../../portfolio.js';
+import { useLabelledClassnames } from '../../../shared/hooks/useLabelledClassnames.js';
+import { useMobileViewport } from '../../../shared/hooks/useViewportSize.js';
+import { ProjectItem } from  './ProjectItem.jsx';
+import { ProjectImage } from './ProjectImage.jsx';
 import { Canvas } from '@react-three/fiber';
-import Apple from "../Apple.jsx";
+import Apple from "../../../shared/components/Apple.jsx";
 
-const styles = getLcn({
+const styles = useLabelledClassnames({
   projects: [
     'relative h-auto mb-[100px] px-[20px]',
     'sm:px-8'
@@ -31,27 +31,26 @@ const styles = getLcn({
   ]
 });
 
-const Projects = () => {
+export const Projects = () => {
   const [projectImagePath, setProjectImagePath] = useState(null);
   const [projectImagePos,  setProjectImagePos] = useState(null);
   const [projectDescription, setProjectDescription] = useState(null);
   const [projectTech, setProjectTech] = useState(null);
   const [isMouseLeave, setIsMouseLeave] = useState(true);
 
-  const viewportSize = useViewportSize();
-  const isMobile = viewportSize.width < 640;
+  const isMobile = useMobileViewport();
 
-  const handleProjectMouseEnter = (index) => {
+  const handleProjectItemMouseEnter = (index) => {
+    const yPos = index * 10;
+    
     setIsMouseLeave(false);
     setProjectImagePath(portfolio[index].image);
     setProjectDescription(portfolio[index].description);
     setProjectTech(portfolio[index].tech);
-
-    const yPos = index * 10;
     setProjectImagePos(yPos);
   };
 
-  const handleProjectMouseExit = () => {
+  const handleProjectItemMouseExit = () => {
     setIsMouseLeave(true);
   };
 
@@ -65,8 +64,8 @@ const Projects = () => {
                 key={`project-${index}`}
                 project={project}
                 index={index}
-                handleMouseEnter={handleProjectMouseEnter}
-                handleMouseExit={handleProjectMouseExit}
+                onMouseEnter={handleProjectItemMouseEnter}
+                onMouseLeave={handleProjectItemMouseExit}
               />
             ))}
           </ul>
@@ -100,5 +99,3 @@ const Projects = () => {
     </section>
   );
 };
-
-export default Projects;

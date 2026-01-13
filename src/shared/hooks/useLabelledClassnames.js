@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 export const labelToClass = (label) => dasherize(underscore(label));
 
-export function getLcn(
+export function useLabelledClassnames(
   classes,
 ) {
   const lcn = {};

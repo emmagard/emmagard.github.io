@@ -1,7 +1,7 @@
 import React from "react";
-import { getLcn } from '../utils/labelled-classnames';
+import { useLabelledClassnames } from '../../../shared/hooks/useLabelledClassnames.js';
 
-const styles = getLcn({
+const styles = useLabelledClassnames({
   skillsListTitle: [
     'font-semibold text-black',
     'text-xl mb-[10px]',
@@ -18,17 +18,18 @@ const styles = getLcn({
   ]
 });
 
-const SkillsList = ({ title, items }) => {
+export const SkillsList = ({
+  title,
+  items
+}) => {
   return (
-    <div>
+    <>
       <h3 className={styles.skillsListTitle}>{ title }</h3>
       <ul className={styles.skillsList}>
         {items.map((item, i) => (
           <li key={`${item}-${i}`} className={styles.skillsListItem}>{item}</li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
-
-export default SkillsList;

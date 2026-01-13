@@ -22,8 +22,6 @@ const Banana = (props) => {
     b: 0,
     isColor: true
   };
-
-  console.log(materials['Material.001']);
   
   useFrame(({clock}) => {
     bananaRef.current.rotation.y = clock.elapsedTime;
