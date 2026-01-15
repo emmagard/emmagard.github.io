@@ -5,7 +5,7 @@ import { Home } from './features/home-tab-panel';
 import { Projects} from './features/project-tab-panel/components/Projects.jsx';
 import { Skills } from './features/skills-tab-panel/components/Skills.jsx';
 import Contact from './features/contact-tab-panel/Contact.jsx';
-import { Tabs, Tab, TabPanel, TabLabel } from './features/tabs/index.js';
+import { Tabs, TabPanel, TabWithLabel } from './features/tabs/index.js';
 
 const styles = useLabelledClassnames({
   title: [
@@ -36,10 +36,10 @@ const App = () => {
           <h1 className={styles.title}>EMMA GARDNER</h1>
           <Tabs className={styles.tabsContainer}>
             <div className={styles.tabsNav}>
-              <Tab index={0}><TabLabel>Home</TabLabel></Tab>
-              <Tab index={1}><TabLabel>Projects</TabLabel></Tab>
-              <Tab index={2}><TabLabel>Skills</TabLabel></Tab>
-              <Tab index={3}><TabLabel>Contact</TabLabel></Tab>
+              <TabWithLabel index={0} tabLabel="Home" />
+              <TabWithLabel index={1} tabLabel="Projects" />
+              <TabWithLabel index={2} tabLabel="Skills" />
+              <TabWithLabel index={3} tabLabel="Contact" />
             </div>
             <div className="mt-[30px] sm:mt-[50px] h-full">
               <TabPanel index={0} className={`${styles.tabPanel} h-full justify-end`}>

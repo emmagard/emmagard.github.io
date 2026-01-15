@@ -1,5 +1,4 @@
 import React, { useState, createContext, useContext } from "react";
-
 const TabsContext = createContext();
 
 export const Tabs = ({children, ...rest}) => {
@@ -19,10 +18,13 @@ export const Tabs = ({children, ...rest}) => {
   );
 };
 
-export const Tab = ({ index, children, ...rest }) => {
+export const Tab = ({ index, onClick = null, children, ...rest }) => {
   const { activeTab, setActiveTab } = useContext(TabsContext);
   const isActive = index === activeTab;
-  const handleClick = () => setActiveTab(index);
+  const handleClick = () => {
+    setActiveTab(index);
+    onClick && onClick();
+  };
 
   return (
     <div className="tab">
