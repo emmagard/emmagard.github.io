@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Environment } from '@react-three/drei';
 import { programmingLanguages, librariesFrameworks, tools } from '../../../portfolio.js';
 import { Canvas } from '@react-three/fiber';
@@ -37,12 +38,14 @@ export const Skills = () => {
 
       <div className={styles.column2Skills}>
         <Canvas>
-          <Environment files={"background-skills.jpeg"}/>
           <ambientLight intensity={1} />
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.8}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <Melon position={melonPos} rotation={melonRot} />
+          <Suspense fallback={null}>
+            <Environment files={"background-skills.jpeg"}/>
+            <Melon position={melonPos} rotation={melonRot} />
+          </Suspense>
         </Canvas>
       </div>
     </section>

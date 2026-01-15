@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { useLabelledClassnames } from '../../shared/hooks/useLabelledClassnames';
@@ -59,13 +59,15 @@ const Contact = () => {
 
       <div className="absolute left-0 right-0 top-0 bottom-0">
         <Canvas>
-          <Environment files={"background-contact-blank.jpg"}/>
           <ambientLight intensity={1} />
           <spotLight color="#ffffff" position={[0, 1, 4]}  intensity={0.9} castShadow={true} />
           <directionalLight color="#f4c5e0" position={[12, 4, 1]} intensity={0.9}/>
           <directionalLight color="#ffffff" position={[0, 1, 3]} intensity={0.8}/>
-          <Orange position={orangePos} />
-          { !isMobile && <Banana position={bananaPos} rotation={[-0.2, 0, 1]}/> }
+          <Suspense fallback={null}>
+            <Environment files={"background-contact-blank.jpg"}/>
+            <Orange position={orangePos} />
+            { !isMobile && <Banana position={bananaPos} rotation={[-0.2, 0, 1]}/> }
+          </Suspense>
         </Canvas>
       </div>
     </section>
