@@ -23,7 +23,7 @@ const Apple = (props) => {
   }
 
   return (
-    <group {...props} dispose={null} scale={0.25}>
+    <group {...props} dispose={null} scale={0.25} className="animate-emma-fade-in">
       <group position={[11, 1, -7]} ref={appleRef}>
         <mesh
           castShadow

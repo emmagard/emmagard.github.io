@@ -46,12 +46,22 @@ export const ProjectItem = ({
   const isMobile = useMobileViewport();
   const handleMouseEnter = () => onMouseEnter(index);
   const handleMouseExit = () => onMouseLeave();
-  
+
+  const handleFocus = () => {
+    onMouseEnter(index);
+  };
+
+  const handleBlur = () => {
+    onMouseLeave();
+  };
+
   return (
     <li
       className={styles.projectListItem}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseExit}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       {...rest}
     >
       <ProjectItemTitle project={project} />
