@@ -31,7 +31,7 @@ const projects = [
         title: "Compiler",
         description: "A newsletter and publishing platform set up to report on global tech policy.",
         image: "/compiler.jpg",
-        links: "https://www.compiler.news/",
+        link: "https://www.compiler.news/",
         tech: ["Ghost"]
     },
     {
