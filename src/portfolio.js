@@ -147,6 +147,7 @@ export const tools = [
     "Git",
     "Netlify",
     "Vercel",
+    "Shopify",
     "Heroku",
     "WordPress",
     "Contentful",
