@@ -13,13 +13,13 @@ const styles = useLabelledClassnames({
     'p-[20px] relative',
   ],
   projectInfoLabel: [
-    'inline mr-[6px] tracking-[1px]'
+    'inline mr-[6px] tracking-[1px] font-bold'
   ],
   techList: [
     'flex flex-wrap gap-3'
   ],
   techName: [
-    'px-2 bg-gray-200 rounded'
+    'px-3 bg-gray-200 rounded-xl'
   ]
 });
 
