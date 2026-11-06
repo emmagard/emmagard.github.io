@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "MIT School of Engineering",
-        description: "A site re-design that presents academics, resources, and news for MIT’s School of Engineering.",
+        description: "CASE Circle of Excellence award winner 🏆 A site re-design that presents academics, resources, and news for MIT’s School of Engineering.",
         image: "/mit-engineering.jpg",
         link: "https://engineering.mit.edu/",
         tech: ["WordPress", "JavaScript"]
